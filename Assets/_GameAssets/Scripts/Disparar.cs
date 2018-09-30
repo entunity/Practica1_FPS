@@ -6,17 +6,23 @@ public class Disparar : MonoBehaviour {
 
 
     [SerializeField] Transform objetoACrear;
-    [SerializeField] float tiempoentredisparos = 1f;
-    [SerializeField] GameObject ballesta;
+    [SerializeField] float tiempoentredisparos;
+    [SerializeField] GameObject puntodisparo;
+    [SerializeField] ParticleSystem Fuego;
 
     private float tiempoactual;
     private GameObject flecha;
     private bool existeflecha;
-    MoverFlecha m;
+    public bool disparandofuego=false;
     void Start()
     {
-        tiempoentredisparos = 1f;
-        //m=flecha.GetComponent<MoverFlecha>();
+        tiempoentredisparos = 0.4f;
+        disparandofuego = false;
+    }
+
+    private void FixedUpdate()
+    {
+        
     }
 
     // Update is called once per frame
@@ -24,20 +30,23 @@ public class Disparar : MonoBehaviour {
         
         if (Time.time >= tiempoactual && (Input.GetButtonDown("Fire1")))
         {
-            flecha=Instantiate(objetoACrear.gameObject, ballesta.transform.position, transform.rotation);
-            
-        }
-        /*
-        if (Input.GetButtonDown("Fire1")&&flecha.activeSelf==true) {
-           
-            
-            m.enabled = true;
+            flecha=Instantiate(objetoACrear.gameObject, puntodisparo.transform.position, transform.rotation);
+            flecha.AddComponent<MoverFlecha>();
             tiempoactual = Time.time + tiempoentredisparos;
         }
-        if (Time.time >= tiempoactual&& existeflecha==true) {
-            flecha = Instantiate(flecha, ballesta.transform.position, Quaternion.identity);
-            existeflecha = true;
-        }*/
+
+        if ( (Input.GetButtonDown("Fire2")&&disparandofuego==false))
+        {
+            Fuego.Play();
+            disparandofuego = true;
+            tiempoactual = Time.time + tiempoentredisparos;
+        }
+
+        if ((Input.GetButtonDown("Fire2") && disparandofuego == true)&&Time.time >= tiempoactual)
+        {
+            Fuego.Stop();
+            disparandofuego = false;
+        }
 
     }
 }

@@ -179,29 +179,25 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void UpdateCameraPosition(float speed)
         {
-
-           // Debug.Log("x: "+m_Camera.transform.eulerAngles.x+ "y: " + m_Camera.transform.rotation.y+ "z: " + m_Camera.transform.rotation.z);
-            
-                Vector3 newCameraPosition;
-                if (!m_UseHeadBob)
-                {
-                    return;
-                }
-                if (m_CharacterController.velocity.magnitude > 0 && m_CharacterController.isGrounded)
-                {
-                    m_Camera.transform.localPosition =
-                        m_HeadBob.DoHeadBob(m_CharacterController.velocity.magnitude +
-                                          (speed * (m_IsWalking ? 1f : m_RunstepLenghten)));
-                    newCameraPosition = m_Camera.transform.localPosition;
-                    newCameraPosition.y = m_Camera.transform.localPosition.y - m_JumpBob.Offset();
-                }
-                else
-                {
-                    newCameraPosition = m_Camera.transform.localPosition;
-                    newCameraPosition.y = m_OriginalCameraPosition.y - m_JumpBob.Offset();
-                }
-                m_Camera.transform.localPosition = newCameraPosition;
-            
+            Vector3 newCameraPosition;
+            if (!m_UseHeadBob)
+            {
+                return;
+            }
+            if (m_CharacterController.velocity.magnitude > 0 && m_CharacterController.isGrounded)
+            {
+                m_Camera.transform.localPosition =
+                    m_HeadBob.DoHeadBob(m_CharacterController.velocity.magnitude +
+                                      (speed*(m_IsWalking ? 1f : m_RunstepLenghten)));
+                newCameraPosition = m_Camera.transform.localPosition;
+                newCameraPosition.y = m_Camera.transform.localPosition.y - m_JumpBob.Offset();
+            }
+            else
+            {
+                newCameraPosition = m_Camera.transform.localPosition;
+                newCameraPosition.y = m_OriginalCameraPosition.y - m_JumpBob.Offset();
+            }
+            m_Camera.transform.localPosition = newCameraPosition;
         }
 
 
@@ -240,11 +236,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void RotateView()
         {
-            if ((m_Camera.transform.eulerAngles.x < 20f) || (m_Camera.transform.eulerAngles.x > 320f && m_Camera.transform.eulerAngles.x < 360f))
-            { }
-                
-                m_MouseLook.LookRotation(transform, m_Camera.transform);
-            
+            m_MouseLook.LookRotation (transform, m_Camera.transform);
         }
 
 
