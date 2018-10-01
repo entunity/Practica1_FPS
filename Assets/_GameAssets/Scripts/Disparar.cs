@@ -66,29 +66,15 @@ public class Disparar : MonoBehaviour {
         {
             flecha = Instantiate(objetoACrear.gameObject, puntodisparo.transform.position, transform.rotation);
             flecha.AddComponent<MoverFlecha>();
+            flecha.AddComponent<BoxCollider>();
+            flecha.AddComponent<Rigidbody>();
+            flecha.GetComponent<Rigidbody>().useGravity = false;
             tiempoactual = Time.time + tiempoentredisparos;
         }
     }
 
     private void controlBaston()
-    {
-        //Input.GetKey
-
-
-        //encendido baston
-        if ((Input.GetButtonDown("Fire1") && disparandofuego == false))
-        {
-            Fuego.Play();
-            disparandofuego = true;
-        }
-
-        //descuento baston
-        if (disparandofuego == true)
-        {
-            cargabaston -= Time.deltaTime;
-        }
-
-        //aumentar carga
+    {//aumentar carga
         if (disparandofuego == false && cargabaston <= cargamaxima)
         {
             cargabaston += Time.deltaTime;
@@ -97,12 +83,28 @@ public class Disparar : MonoBehaviour {
                 cargabaston = cargamaxima;
             }
         }
-
         // apagado baston
-        if (cargabaston <= 0|| ((Input.GetButtonDown("Fire1") && disparandofuego == true)))
+        if (cargabaston <= 0|| (Input.GetButtonDown("Fire1") && disparandofuego == true))
         {
             Fuego.Stop();
             disparandofuego = false;
         }
+        //encendido baston
+        else if ((Input.GetButtonDown("Fire1") && disparandofuego == false))
+        {
+            Fuego.Play();
+            disparandofuego = true;
+        }
+
+        //disminuir carga
+        else if (disparandofuego == true)
+        {
+            cargabaston -= Time.deltaTime;
+        }
+
+        
+       
+
+        
     }
 }
