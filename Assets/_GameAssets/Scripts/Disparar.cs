@@ -99,7 +99,7 @@ public class Disparar : MonoBehaviour {
         }
 
         // apagado baston
-        if (cargabaston <= 0|| ((Input.GetButtonDown("Fire1") && disparandofuego == true)))
+        if (cargabaston <= 0/*|| (Input.GetButtonDown("Fire1") && disparandofuego == true)*/)
         {
             Fuego.Stop();
             disparandofuego = false;
