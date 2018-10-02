@@ -241,6 +241,12 @@ Prefab:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 114755923889269516, guid: 10948269b737e8a46b8bfb5887babbd8,
+        type: 2}
+      propertyPath: objetoACrear
+      value: 
+      objectReference: {fileID: 4632898330441978, guid: 5d34e9b2c6e88e64cb0b6950539641d6,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 10948269b737e8a46b8bfb5887babbd8, type: 2}
   m_IsPrefabParent: 0
@@ -343,7 +349,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 2
+  m_CollisionDetection: 0
 --- !u!1 &955433491
 GameObject:
   m_ObjectHideFlags: 0

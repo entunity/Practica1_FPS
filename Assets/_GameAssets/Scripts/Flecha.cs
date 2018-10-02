@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoverFlecha : MonoBehaviour {
+public class Flecha : MonoBehaviour {
 
     [SerializeField] float velocidad = 100f;
     [SerializeField] float tiempoespera=2f;
@@ -29,11 +29,15 @@ public class MoverFlecha : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if ( (collision.gameObject.tag == "Enviroment")) {
+        if ( (collision.gameObject.tag == Configuracion.capaEntorno)) {
             this.velocidad = 0;
             this.GetComponent<Rigidbody>().constraints= RigidbodyConstraints.FreezeAll;
             //Destroy(this.gameObject);
             enganchado = true;
+        }
+        else if ((collision.gameObject.tag == Configuracion.capaEnemigos))
+        {
+            Destroy(this.gameObject);
         }
 
 

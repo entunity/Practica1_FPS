@@ -48,11 +48,11 @@ public class Disparar : MonoBehaviour {
     }
 
     private void controlArma() {
-        if (Input.GetKeyDown(KeyCode.Alpha1)){
+        if (Input.GetKeyDown(Configuracion.arma1)){
             ballesta.SetActive(true);
             baston.SetActive(false);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(Configuracion.arma2))
         {
             ballesta.SetActive(false);
             baston.SetActive(true);
@@ -62,13 +62,9 @@ public class Disparar : MonoBehaviour {
     private void controlBallesta()
     { 
         //disparo ballesta
-        if (Time.time >= tiempoactual && (Input.GetButtonDown("Fire1")))
+        if (Time.time >= tiempoactual && (Input.GetButtonDown(Configuracion.botonDisparo)))
         {
             flecha = Instantiate(objetoACrear.gameObject, puntodisparo.transform.position, transform.rotation);
-            flecha.AddComponent<MoverFlecha>();
-            flecha.AddComponent<BoxCollider>();
-            flecha.AddComponent<Rigidbody>();
-            flecha.GetComponent<Rigidbody>().useGravity = false;
             tiempoactual = Time.time + tiempoentredisparos;
         }
     }
@@ -84,17 +80,15 @@ public class Disparar : MonoBehaviour {
             }
         }
         // apagado baston
-<<<<<<< HEAD
-        if (cargabaston <= 0/*|| (Input.GetButtonDown("Fire1") && disparandofuego == true)*/)
-=======
-        if (cargabaston <= 0|| (Input.GetButtonDown("Fire1") && disparandofuego == true))
->>>>>>> 71096b64eb93e2fbf7642381e1873255e65ae723
+        
+        if (cargabaston <= 0|| (Input.GetButtonDown(Configuracion.botonDisparo) && disparandofuego == true))
+
         {
             Fuego.Stop();
             disparandofuego = false;
         }
         //encendido baston
-        else if ((Input.GetButtonDown("Fire1") && disparandofuego == false))
+        else if ((Input.GetButtonDown(Configuracion.botonDisparo) && disparandofuego == false))
         {
             Fuego.Play();
             disparandofuego = true;
