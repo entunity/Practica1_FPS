@@ -240,7 +240,10 @@
   <ItemGroup>
     <Compile Include="Assets\_GameAssets\Scripts\Configuracion.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\Disparar.cs" />
-    <Compile Include="Assets\_GameAssets\Scripts\EnemigoSimple.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\Enemigos\EnemigoAvanzado.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\Enemigos\EnemigoSimple.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\Enemigos\NucleoEnemAvanz.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\Enemigos\Orbitar.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\Flecha.cs" />
     <Compile Include="Assets\PyroParticles\Prefab\Script\FireBaseScript.cs" />
     <Compile Include="Assets\PyroParticles\Prefab\Script\FireCollisionForwardScript.cs" />
