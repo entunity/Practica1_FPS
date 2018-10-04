@@ -31,7 +31,7 @@ public class EnemigoSimple : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if ((collision.gameObject.tag == Configuracion.capaMunicion))
+        if ((collision.gameObject.tag == Configuracion.tagMunicion))
         {
             Destroy(this.gameObject);
         }

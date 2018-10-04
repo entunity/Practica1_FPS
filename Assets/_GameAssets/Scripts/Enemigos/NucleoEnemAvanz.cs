@@ -18,7 +18,7 @@ public class NucleoEnemAvanz : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if ((collision.gameObject.tag == Configuracion.capaMunicion))
+        if ((collision.gameObject.tag == Configuracion.tagMunicion))
         {
             Destroy(padre.gameObject);
         }

@@ -11,9 +11,10 @@ public class Configuracion : MonoBehaviour {
     public static KeyCode arma2 = KeyCode.Alpha2;
 
     //capas
-    public static string capaEntorno = "Enviroment";
-    public static string capaMunicion = "Ammo";
-    public static string capaEnemigos = "Enemy";
+    public static string tagEntorno = "Enviroment";
+    public static string tagMunicion = "Ammo";
+    public static string tagEnemigos = "Enemy";
+    public static string tagPlayer = "Player";
 
 
     // Use this for initialization

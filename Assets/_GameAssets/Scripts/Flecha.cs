@@ -29,13 +29,13 @@ public class Flecha : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if ( (collision.gameObject.tag == Configuracion.capaEntorno)) {
+        if ( (collision.gameObject.tag == Configuracion.tagEntorno)) {
             this.velocidad = 0;
             this.GetComponent<Rigidbody>().constraints= RigidbodyConstraints.FreezeAll;
             //Destroy(this.gameObject);
             enganchado = true;
         }
-        else if ((collision.gameObject.tag == Configuracion.capaEnemigos))
+        else if ((collision.gameObject.tag == Configuracion.tagEnemigos))
         {
             Destroy(this.gameObject);
         }
