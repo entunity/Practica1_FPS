@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Disparar : MonoBehaviour {
+public class Jugador : MonoBehaviour {
 
 
     [SerializeField] Transform objetoACrear;
@@ -14,8 +14,9 @@ public class Disparar : MonoBehaviour {
     [SerializeField] GameObject ballesta;
     [SerializeField] GameObject baston;
 
+     public static float vida=100;
+
     private float tiempoactual;
-    private GameObject flecha;
     private bool existeflecha;
     public bool disparandofuego=false;
     private float cargamaxima;
@@ -31,11 +32,6 @@ public class Disparar : MonoBehaviour {
 
     }
 
-    private void FixedUpdate()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update () {
 
@@ -48,12 +44,16 @@ public class Disparar : MonoBehaviour {
     }
 
     private void controlArma() {
-        if (Input.GetKeyDown(Configuracion.arma1)){
+        if (Input.GetKeyDown(Configuracion.botonArma1)){
             ballesta.SetActive(true);
             baston.SetActive(false);
         }
-        if (Input.GetKeyDown(Configuracion.arma2))
+        if (Input.GetKeyDown(Configuracion.botonArma2))
         {
+            ballesta.SetActive(false);
+            baston.SetActive(true);
+        }
+        if (Input.GetKeyDown(Configuracion.botonZoom)) {
             ballesta.SetActive(false);
             baston.SetActive(true);
         }
@@ -64,7 +64,7 @@ public class Disparar : MonoBehaviour {
         //disparo ballesta
         if (Time.time >= tiempoactual && (Input.GetButtonDown(Configuracion.botonDisparo)))
         {
-            flecha = Instantiate(objetoACrear.gameObject, puntodisparo.transform.position, transform.rotation);
+            Instantiate(objetoACrear.gameObject, puntodisparo.transform.position, transform.rotation);
             tiempoactual = Time.time + tiempoentredisparos;
         }
     }
@@ -104,5 +104,10 @@ public class Disparar : MonoBehaviour {
        
 
         
+    }
+    private void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject.tag == Configuracion.tagEnemigos) {
+            vida -= 1;
+        }
     }
 }

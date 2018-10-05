@@ -7,8 +7,9 @@ public class Configuracion : MonoBehaviour {
     
     //Botones
     public static string botonDisparo = "Fire1";
-    public static KeyCode arma1=KeyCode.Alpha1;
-    public static KeyCode arma2 = KeyCode.Alpha2;
+    public static KeyCode botonArma1=KeyCode.Alpha1;
+    public static KeyCode botonArma2 = KeyCode.Alpha2;
+    public static KeyCode botonZoom = KeyCode.Mouse3;
 
     //capas
     public static string tagEntorno = "Enviroment";

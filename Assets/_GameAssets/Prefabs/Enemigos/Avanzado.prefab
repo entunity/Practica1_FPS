@@ -82,6 +82,7 @@ GameObject:
   - component: {fileID: 54257259704413078}
   - component: {fileID: 136051562474810306}
   - component: {fileID: 114190198715430630}
+  - component: {fileID: 114713096717688614}
   m_Layer: 0
   m_Name: Avanzado
   m_TagString: Enemy
@@ -294,7 +295,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1609783672142718}
   m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 9.67}
   m_LocalScale: {x: 2.4785867, y: 2.4785864, z: 2.4785864}
   m_Children:
   - {fileID: 4300477222875394}
@@ -430,7 +431,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: a03a699e92f2f7146aa057af39e384ee, type: 2}
+  - {fileID: 2100000, guid: 69e1fe9b409c693448a2a278ad18235d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -731,7 +732,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!54 &54045560141751208
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -746,7 +747,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!54 &54257259704413078
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -776,7 +777,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!54 &54449179452185304
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -791,7 +792,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!54 &54627540207019386
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -806,7 +807,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!54 &54647201069205772
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -821,7 +822,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!54 &54894714474321350
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -836,7 +837,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!54 &54921882844745438
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -851,7 +852,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!54 &54953784030287480
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -866,7 +867,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &114051665961777388
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -912,14 +913,18 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1609783672142718}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6060e8e61aad4664588924e68fcace33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 1.5
-  tiempocambiodireccion: 2
-  direccion: {x: 0, y: 0, z: 0}
+  tiempoCambioDireccion: 1
+  danyo: 10
+  distanciaExplosion: 2
+  player: {fileID: 0}
+  estaPersiguiendo: 0
+  distanciaDeteccion: 10
 --- !u!114 &114339016091183982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -959,6 +964,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 4030516104922524}
   velocidadGradosSeg: 360
+--- !u!114 &114713096717688614
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1609783672142718}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3dfab5da18b2614daa85ff9bb455611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidad: 1.5
+  tiempoCambioDireccion: 1
+  danyo: 10
+  distanciaExplosion: 2
+  player: {fileID: 0}
+  estaPersiguiendo: 0
 --- !u!114 &114715485100065020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -970,7 +992,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9a8c118d9e0e1a46a4645c963fc44b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  padre: {fileID: 1609783672142718}
+  velocidad: 0
+  tiempoCambioDireccion: 0
+  danyo: 0
+  distanciaExplosion: 0
+  player: {fileID: 0}
+  estaPersiguiendo: 0
 --- !u!114 &114854152004661550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1005,7 +1032,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1609783672142718}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.15
   m_Height: 0.45
   m_Direction: 1
