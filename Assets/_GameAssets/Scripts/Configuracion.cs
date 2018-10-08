@@ -17,14 +17,10 @@ public class Configuracion : MonoBehaviour {
     public static string tagEnemigos = "Enemy";
     public static string tagPlayer = "Player";
 
+    public static float vida=100;
+    public enum enumArmas:int {
+        ballesta = 0,
+        lanzallamas = 1
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    }
 }

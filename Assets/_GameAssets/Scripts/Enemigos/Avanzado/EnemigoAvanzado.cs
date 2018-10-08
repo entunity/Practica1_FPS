@@ -8,7 +8,7 @@ public class EnemigoAvanzado : EnemigoBase {
 
     private Vector3 playerXZ;
 
-    void LateUpdate() {
+    void FixedUpdate() {
 
         if (Vector3.Distance(this.transform.position, player.transform.position) < distanciaDeteccion) {
             estaPersiguiendo = true;
@@ -18,5 +18,4 @@ public class EnemigoAvanzado : EnemigoBase {
             estaPersiguiendo = false;
         }
     }
-    private void OnCollisionEnter(Collision collision) {}
 }

@@ -5,28 +5,29 @@ using UnityEngine;
 public class EnemigoBase : MonoBehaviour {
     [Header("Movimiento")]
     [SerializeField] private float velocidad;
-    [SerializeField] float tiempoCambioDireccion;
+    [SerializeField] private float tiempoCambioDireccion;
     [Header("Impacto")]
-    [SerializeField] float danyo;
-    [SerializeField] float distanciaExplosion;
+    [SerializeField] private float danyo;
+    [SerializeField] private float distanciaExplosion;
+    [SerializeField] private Transform particulaExplosion;
 
     [Header("Herencia")]
-    public GameObject player;
-    public bool estaPersiguiendo;
+    protected GameObject player;
+    [SerializeField] protected bool estaPersiguiendo;
 
 
     private Vector3 direccion;
     private float timer;
 
     // Use this for initialization
-    private void Start() {
+    void Start() {
         cambiarDireccion();
         player = GameObject.FindGameObjectWithTag(Configuracion.tagPlayer);
         estaPersiguiendo = false;
     }
 
     // Update is called once per frame
-    private void Update() {
+    void Update() {
         transform.Translate(Vector3.forward * velocidad * Time.deltaTime);
         if (estaPersiguiendo == false) {
             timer += Time.deltaTime;
@@ -34,13 +35,12 @@ public class EnemigoBase : MonoBehaviour {
                 cambiarDireccion();
                 timer = 0;
             }
+        }
+        if (detectarDistanciaPersonaje() < distanciaExplosion) {
+            Configuracion.vida -= danyo;
+            morir();
+            Debug.Log("Vida: " + Configuracion.vida);
 
-            if (detectarDistanciaPersonaje() < distanciaExplosion) {
-                Jugador.vida -= danyo;
-                morir();
-                Debug.Log("Vida: " + Jugador.vida);
-
-            }
         }
     }
     //mira la distancia al player
@@ -49,14 +49,16 @@ public class EnemigoBase : MonoBehaviour {
     }
     //cambia la direccion en la q mira
     private void cambiarDireccion() {
-        direccion = new Vector3(0, Random.Range(-90, 91), 0);
+        direccion = new Vector3(0, Random.Range(-180, 181), 0);
         transform.Rotate(direccion);
     }
-    //destrulle el objeto o si padre
-    private void morir() {
+    //destrulle el objeto o si no el padre
+    public void morir() {
         if (this.transform.parent == null) {
+            Instantiate(particulaExplosion.gameObject, this.transform.position, this.transform.rotation);
             Destroy(this.gameObject);
         } else {
+            Instantiate(particulaExplosion.gameObject, this.transform.position, this.transform.rotation);
             Destroy(this.transform.parent.gameObject);
         }
     }
@@ -64,5 +66,9 @@ public class EnemigoBase : MonoBehaviour {
         if ((collision.gameObject.tag == Configuracion.tagMunicion)) {
             morir();
         }
+        if ((collision.gameObject.tag == Configuracion.tagEntorno)){
+            cambiarDireccion();
+        }
     }
+    
 }

@@ -6,8 +6,7 @@ public class Flecha : MonoBehaviour {
 
     [SerializeField] float velocidad = 100f;
     [SerializeField] float tiempoespera=2f;
-
-    private bool enganchado = false;
+    [SerializeField] float danio;
     private float timer;
 
 	// Use this for initialization
@@ -17,12 +16,8 @@ public class Flecha : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         transform.Translate(Vector3.forward * velocidad * Time.deltaTime);
-
-
-        if (enganchado == true) {
             timer += Time.deltaTime;
-        }
-        if (tiempoespera <= timer&& enganchado == true) {
+        if (tiempoespera <= timer) {
             Destroy(this.gameObject);
         }
     }
@@ -33,11 +28,17 @@ public class Flecha : MonoBehaviour {
             this.velocidad = 0;
             this.GetComponent<Rigidbody>().constraints= RigidbodyConstraints.FreezeAll;
             //Destroy(this.gameObject);
-            enganchado = true;
         }
         else if ((collision.gameObject.tag == Configuracion.tagEnemigos))
         {
+            //collision.gameObject.GetComponent<>.vida -= danio;
             Destroy(this.gameObject);
+        }
+        else if ((collision.gameObject.tag == Configuracion.tagPlayer)) {
+            Configuracion.vida -= danio;
+            Debug.Log("Vida: " + Configuracion.vida);
+            Destroy(this.gameObject);
+
         }
 
 
