@@ -8,6 +8,7 @@ public class WeaponSelector : MonoBehaviour {
     [Header("Jugador")]
     [SerializeField] List<GameObject> listaArmas;
     void Start() {
+        Configuracion.DanioPlayer = 5;
     }
     void Update() {
         controlArma();
@@ -16,10 +17,12 @@ public class WeaponSelector : MonoBehaviour {
     private void controlArma() {
         if (Input.GetKeyDown(Configuracion.botonArma1)){
             ActivarArmas((int)Configuracion.enumArmas.ballesta);
+            Configuracion.DanioPlayer = 5;
         }
         if (Input.GetKeyDown(Configuracion.botonArma2))
         {
             ActivarArmas((int)Configuracion.enumArmas.lanzallamas);
+            Configuracion.DanioPlayer = 1;
         }
         if (Input.GetKeyDown(Configuracion.botonZoom)) {
         }

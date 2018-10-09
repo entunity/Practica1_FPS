@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class Flecha : MonoBehaviour {
 
-    [SerializeField] float velocidad = 100f;
+    [SerializeField] public float velocidad = 100f;
     [SerializeField] float tiempoespera=2f;
-    [SerializeField] float danio;
-    private float timer;
 
+
+    private float timer;
+    public bool chocado=false;
 	// Use this for initialization
 	void Start () {
-    }
+        chocado = false;
+            }
 	
 	// Update is called once per frame
 	void Update () {
@@ -33,12 +35,6 @@ public class Flecha : MonoBehaviour {
         {
             //collision.gameObject.GetComponent<>.vida -= danio;
             Destroy(this.gameObject);
-        }
-        else if ((collision.gameObject.tag == Configuracion.tagPlayer)) {
-            Configuracion.vida -= danio;
-            Debug.Log("Vida: " + Configuracion.vida);
-            Destroy(this.gameObject);
-
         }
 
 

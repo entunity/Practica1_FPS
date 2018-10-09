@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4314809483074372}
   - component: {fileID: 33665519665708548}
   - component: {fileID: 23402957884619106}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arrow_Small
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4787284924849698}
   - component: {fileID: 33557778263710714}
   - component: {fileID: 23971706371436098}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ballesta
   m_TagString: Player
   m_Icon: {fileID: 0}

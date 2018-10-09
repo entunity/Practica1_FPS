@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33833646340757632}
   - component: {fileID: 135236738866226916}
   - component: {fileID: 23090617582364784}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: PuntoSalidaLlamas
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4298090740658076}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LlamasHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4188077247586994}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BaseFlecha
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 4616903462042560}
   - component: {fileID: 33569329614608396}
   - component: {fileID: 23148686200333988}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arrow_Small
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 4014739896727720}
   - component: {fileID: 33132141140249618}
   - component: {fileID: 23869519414406902}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ballesta
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 33366066307009804}
   - component: {fileID: 23660336805383318}
   - component: {fileID: 95038631828739244}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Baston
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4696061982984462}
   - component: {fileID: 114778338197666368}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Lanzallamas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 65567776266669844}
   - component: {fileID: 23060100425146846}
   - component: {fileID: 54308064314014548}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (1)
   m_TagString: Ammo
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 81422548305131384}
   - component: {fileID: 124171384934596316}
   - component: {fileID: 114492389580921276}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4849169038133202}
   - component: {fileID: 114527281635962510}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ballesta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 4225516086515504}
   - component: {fileID: 198329601026423890}
   - component: {fileID: 199699569859329780}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: FlamethrowerFire
   m_TagString: Ammo
   m_Icon: {fileID: 0}
@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 65442086013947292}
   - component: {fileID: 23779336185643808}
   - component: {fileID: 54885446521739232}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Ammo
   m_Icon: {fileID: 0}
@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 114423950494818914}
   - component: {fileID: 54090776352045274}
   - component: {fileID: 82277162691927098}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}

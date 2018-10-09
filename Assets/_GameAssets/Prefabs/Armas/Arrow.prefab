@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114810598586570760}
   - component: {fileID: 65227449826665364}
   - component: {fileID: 54228769013970482}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arrow
   m_TagString: Ammo
   m_Icon: {fileID: 0}
@@ -143,3 +143,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidad: 25
   tiempoespera: 2
+  danio: 0

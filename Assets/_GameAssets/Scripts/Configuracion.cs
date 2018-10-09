@@ -16,8 +16,12 @@ public class Configuracion : MonoBehaviour {
     public static string tagMunicion = "Ammo";
     public static string tagEnemigos = "Enemy";
     public static string tagPlayer = "Player";
+    //juego
+    public static string nombreParticulas = "ExplosionEnemigoParticulas";
 
+    //player
     public static float vida=100;
+    public static float DanioPlayer=0;
     public enum enumArmas:int {
         ballesta = 0,
         lanzallamas = 1
