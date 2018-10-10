@@ -12,7 +12,6 @@ public class Torre : EnemigoBase {
     private float tiempoactual;
     private Vector3 playerXZ;
     private void LateUpdate() {
-        
         if (Vector3.Distance(this.transform.position, player.transform.position) < distanciaDeteccion) {
             playerXZ = new Vector3(player.transform.position.x, canion.transform.position.y, player.transform.position.z);
             canion.transform.LookAt(playerXZ);

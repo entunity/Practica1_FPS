@@ -251,17 +251,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_GameAssets\Scripts\Armas\Ballesta.cs" />
-    <Compile Include="Assets\_GameAssets\Scripts\Armas\Flecha.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\Armas\Lanzallamas.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\Armas\ProyectilBase.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\Configuracion.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\Enemigos\Bala.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\Enemigos\EnemigoAvanzado.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\Enemigos\EnemigoBase.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\Enemigos\EnemigoBoss.cs" />
-    <Compile Include="Assets\_GameAssets\Scripts\Enemigos\NucleoEnem.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\Enemigos\Orbitar.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\Enemigos\Spawn.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\Enemigos\Torre.cs" />
-    <Compile Include="Assets\_GameAssets\Scripts\WeaponSelector.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\Jugador.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\Z_Desechados\NucleoEnem.cs" />
     <Compile Include="Assets\PyroParticles\Prefab\Script\FireBaseScript.cs" />
     <Compile Include="Assets\PyroParticles\Prefab\Script\FireCollisionForwardScript.cs" />
     <Compile Include="Assets\PyroParticles\Prefab\Script\FireConstantBaseScript.cs" />

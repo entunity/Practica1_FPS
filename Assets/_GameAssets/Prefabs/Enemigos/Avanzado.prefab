@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4604802306499396}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Proteccion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 114066353850636926}
   - component: {fileID: 136666291721158878}
   - component: {fileID: 54894714474321350}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: balloon rippled main (2)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 114051665961777388}
   - component: {fileID: 136696044789445532}
   - component: {fileID: 54449179452185304}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: balloon rippled main (4)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -75,10 +75,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4891981473142598}
   - component: {fileID: 33883225587436864}
-  - component: {fileID: 135638442280713316}
   - component: {fileID: 23225762713872634}
   - component: {fileID: 54341201095167888}
-  m_Layer: 0
+  - component: {fileID: 65121452416959208}
+  m_Layer: 8
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 114160586914866352}
   - component: {fileID: 136418993435562300}
   - component: {fileID: 54953784030287480}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: balloon rippled main (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 54257259704413078}
   - component: {fileID: 136051562474810306}
   - component: {fileID: 114190198715430630}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Avanzado
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 114963336454794430}
   - component: {fileID: 136980825511969630}
   - component: {fileID: 54012344339340530}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: balloon rippled main (3)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 114339016091183982}
   - component: {fileID: 136150472386227738}
   - component: {fileID: 54921882844745438}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: balloon rippled main (5)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 114854152004661550}
   - component: {fileID: 136203898679609344}
   - component: {fileID: 54647201069205772}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: balloon rippled main (6)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 114460490195417396}
   - component: {fileID: 136117830909283856}
   - component: {fileID: 54627540207019386}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: balloon rippled main (7)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -214,9 +214,7 @@ GameObject:
   - component: {fileID: 33991553007046540}
   - component: {fileID: 23286787011176250}
   - component: {fileID: 54045560141751208}
-  - component: {fileID: 136831275922306850}
-  - component: {fileID: 114715485100065020}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Nucleo
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -236,7 +234,7 @@ GameObject:
   - component: {fileID: 114486017053105322}
   - component: {fileID: 136576535414399198}
   - component: {fileID: 54331007036106006}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: balloon rippled main
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -349,7 +347,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1609783672142718}
   m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 9.67}
+  m_LocalPosition: {x: 2.07, y: 1.5, z: 4.27}
   m_LocalScale: {x: 2.4785867, y: 2.4785864, z: 2.4785864}
   m_Children:
   - {fileID: 4030516104922524}
@@ -861,7 +859,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 1
@@ -893,7 +891,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 122
   m_CollisionDetection: 0
 --- !u!54 &54449179452185304
 Rigidbody:
@@ -985,6 +983,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 1
+--- !u!65 &65121452416959208
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1304425510879560}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: -0.00000047683716, z: 0}
 --- !u!114 &114051665961777388
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1035,6 +1045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6060e8e61aad4664588924e68fcace33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vidaEnemigo: 0
   velocidad: 1.5
   TiempoCambioDireccion: 1
   BaseMovimiento: {fileID: 1304425510879560}
@@ -1042,8 +1053,7 @@ MonoBehaviour:
   danyo: 10
   distanciaExplosion: 2
   particulaExplosion: {fileID: 0}
-  estaPersiguiendo: 0
-  distanciaDeteccion: 10
+  DistanciaPersecucion: 0
 --- !u!114 &114339016091183982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1083,25 +1093,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 4030516104922524}
   velocidadGradosSeg: 360
---- !u!114 &114715485100065020
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1844824678626200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9a8c118d9e0e1a46a4645c963fc44b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidad: 0
-  TiempoCambioDireccion: 0
-  BaseMovimiento: {fileID: 0}
-  AlturaMovimiento: 0
-  danyo: 0
-  distanciaExplosion: 0
-  particulaExplosion: {fileID: 0}
-  estaPersiguiendo: 0
 --- !u!114 &114854152004661550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1128,18 +1119,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 4030516104922524}
   velocidadGradosSeg: 360
---- !u!135 &135638442280713316
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1304425510879560}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136051562474810306
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1244,19 +1223,6 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 2
   m_Center: {x: -0.00000047683716, y: -0.0000008791685, z: 0.31079108}
---- !u!136 &136831275922306850
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1844824678626200}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.2
-  m_Height: 0.6
-  m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136980825511969630
 CapsuleCollider:
   m_ObjectHideFlags: 1

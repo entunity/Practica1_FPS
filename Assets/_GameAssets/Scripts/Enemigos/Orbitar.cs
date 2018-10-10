@@ -33,7 +33,8 @@ public class Orbitar : MonoBehaviour
     {
         if ((collision.gameObject.tag == Configuracion.tagMunicion))
         {
-            Destroy(this.gameObject);
+            this.GetComponent<Renderer>().enabled = false;
+            this.GetComponent<Collider>().enabled = false;
         }
     }
 }

@@ -19,10 +19,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4018049951113724}
-  - component: {fileID: 114437009568185674}
   - component: {fileID: 135255356822718042}
   - component: {fileID: 54644397378937756}
-  m_Layer: 0
+  - component: {fileID: 114784118534899530}
+  m_Layer: 10
   m_Name: DisparoCanion
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 33561502582621834}
   - component: {fileID: 135329766604566552}
   - component: {fileID: 23394698214368820}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 33953308220556074}
   - component: {fileID: 135333334151132876}
   - component: {fileID: 23392640894353086}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 33666684704359398}
   - component: {fileID: 135699573613063910}
   - component: {fileID: 23015371482201882}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,7 +276,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114437009568185674
+--- !u!114 &114784118534899530
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -284,11 +284,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1008203508714316}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a7eae2e660c8854c9e820ff4a716466, type: 3}
+  m_Script: {fileID: 11500000, guid: c3a389ac13986604c988d88ba70814f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 50
   tiempoespera: 2
+  chocado: 0
   danio: 5
 --- !u!135 &135255356822718042
 SphereCollider:

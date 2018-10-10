@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemigoBase : MonoBehaviour {
+    [SerializeField] private float vidaEnemigo;
     [Header("Movimiento")]
     [SerializeField] private float velocidad;
     [SerializeField] private float TiempoCambioDireccion;
     [SerializeField] private GameObject BaseMovimiento;
     [SerializeField] private float AlturaMovimiento;
+    private Vector3 direccion;
+    private float TimerCambioDireccion;
     [Header("Impacto")]
     [SerializeField] private float danyo;
     [SerializeField] private float distanciaExplosion;
@@ -16,11 +19,11 @@ public class EnemigoBase : MonoBehaviour {
 
     [Header("Herencia")]
     protected GameObject player;
-    [SerializeField] protected bool estaPersiguiendo;
+    protected bool estaPersiguiendo;
 
 
-    private Vector3 direccion;
-    private float timer;
+    
+    
 
     // Use this for initialization
     void Start() {
@@ -33,25 +36,26 @@ public class EnemigoBase : MonoBehaviour {
     void Update() {
         if (BaseMovimiento != null&&velocidad!=0)
         {
-            this.transform.Translate(Vector3.forward * velocidad * Time.deltaTime);
-            BaseMovimiento.transform.position = new Vector3(this.transform.position.x, BaseMovimiento.transform.position.y, this.transform.position.z);
-            this.transform.position = new Vector3(this.transform.position.x, BaseMovimiento.transform.position.y + 1.5f, this.transform.position.z);
+           this.transform.Translate(Vector3.forward * velocidad * Time.deltaTime);
+           BaseMovimiento.transform.position = new Vector3(this.transform.position.x, BaseMovimiento.transform.position.y, this.transform.position.z);
+           this.transform.position = new Vector3(this.transform.position.x, BaseMovimiento.transform.position.y + AlturaMovimiento, this.transform.position.z);
 
 
             if (estaPersiguiendo == false)
             {
-                timer += Time.deltaTime;
-                if (timer > TiempoCambioDireccion)
+                TimerCambioDireccion += Time.deltaTime;
+                if (TimerCambioDireccion > TiempoCambioDireccion)
                 {
                     cambiarDireccion();
-                    timer = 0;
+                    TimerCambioDireccion = 0;
                 }
             }
+            //comprueba si toca al personaje para hacerle daño
             if (detectarDistanciaPersonaje() < distanciaExplosion)
             {
-                Configuracion.vida -= danyo;
+                Jugador.VidaPlayer -= danyo;
                 morir();
-                Debug.Log("Vida: " + Configuracion.vida);
+                Debug.Log("Vida: " + Jugador.VidaPlayer);
 
             }
         }
@@ -68,7 +72,6 @@ public class EnemigoBase : MonoBehaviour {
     //destrulle el objeto o si no el padre
     public void morir() {
         particulaExplosion.transform.position = this.transform.position;
-        //Instantiate(particulaExplosion.gameObject, this.transform.position, this.transform.rotation);
         particulaExplosion.Play();
         if (this.transform.parent == null) {
             Destroy(this.gameObject);
@@ -77,13 +80,17 @@ public class EnemigoBase : MonoBehaviour {
         }
     }
     private void OnCollisionEnter(Collision collision) {
-        //Debug.Log(collision.gameObject.name);
-        if ((collision.gameObject.tag == Configuracion.tagMunicion)) {
-            morir();
-        }
         if ((collision.gameObject.tag == Configuracion.tagEntorno)){
             cambiarDireccion();
         }
+        if ((collision.gameObject.tag == Configuracion.tagMunicion)) {
+            this.vidaEnemigo -= Jugador.DanioPlayer;
+            //this.transform.localScale -= new Vector3(0.2f, 0.2f, 0.2f);
+            if (vidaEnemigo <= 0) {
+                morir();
+            }
+        }
     }
+ }
     
-}
+

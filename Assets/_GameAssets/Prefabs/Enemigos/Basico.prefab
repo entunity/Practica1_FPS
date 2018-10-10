@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4979583083985154}
   - component: {fileID: 33030847530693790}
-  - component: {fileID: 135718052771220026}
   - component: {fileID: 23557593076373336}
   - component: {fileID: 54457658073768206}
+  - component: {fileID: 65528217467712858}
   m_Layer: 8
   m_Name: Base
   m_TagString: Untagged
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 54124562893286594}
   - component: {fileID: 136288644350179416}
   - component: {fileID: 114994086937718530}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Basico
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 4127776554420424}
   - component: {fileID: 33881123107189660}
   - component: {fileID: 23925414077853556}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: balloon main
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -216,8 +216,20 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 122
   m_CollisionDetection: 0
+--- !u!65 &65528217467712858
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1151584815262710}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: -0.00000047683716, z: 0}
 --- !u!114 &114994086937718530
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -229,6 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3dfab5da18b2614daa85ff9bb455611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vidaEnemigo: 5
   velocidad: 1.5
   TiempoCambioDireccion: 1
   BaseMovimiento: {fileID: 1151584815262710}
@@ -236,19 +249,6 @@ MonoBehaviour:
   danyo: 5
   distanciaExplosion: 2
   particulaExplosion: {fileID: 0}
-  estaPersiguiendo: 0
---- !u!135 &135718052771220026
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1151584815262710}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136288644350179416
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -9,7 +9,7 @@ public class Configuracion : MonoBehaviour {
     public static string botonDisparo = "Fire1";
     public static KeyCode botonArma1=KeyCode.Alpha1;
     public static KeyCode botonArma2 = KeyCode.Alpha2;
-    public static KeyCode botonZoom = KeyCode.Mouse3;
+    public static string botonZoom = "Fire2";
 
     //capas
     public static string tagEntorno = "Enviroment";
@@ -20,11 +20,6 @@ public class Configuracion : MonoBehaviour {
     public static string nombreParticulas = "ExplosionEnemigoParticulas";
 
     //player
-    public static float vida=100;
-    public static float DanioPlayer=0;
-    public enum enumArmas:int {
-        ballesta = 0,
-        lanzallamas = 1
-
-    }
+    public static float FovPlayer=60;
+    public static float FovZoom = 20;
 }

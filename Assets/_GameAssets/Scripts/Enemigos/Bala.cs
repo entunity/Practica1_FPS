@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bala : Flecha {
+public class Bala : ProyectilBase {
     [SerializeField] float danio;
     private void OnCollisionEnter(Collision collision)
     {
@@ -11,9 +11,9 @@ public class Bala : Flecha {
             Destroy(this.gameObject);
         }else if ((collision.gameObject.tag == Configuracion.tagPlayer && chocado == false))
         {
-            Configuracion.vida -= danio;
+            Jugador.VidaPlayer -= danio;
             chocado = true;
-            Debug.Log("Vida: " + Configuracion.vida);
+            Debug.Log("Vida: " + Jugador.VidaPlayer);
             Destroy(this.gameObject);
 
         }

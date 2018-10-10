@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Lanzallamas : MonoBehaviour {
 
@@ -9,7 +10,8 @@ public class Lanzallamas : MonoBehaviour {
     [SerializeField] ParticleSystem Fuego;
     [SerializeField] float cargabaston;
     [SerializeField] GameObject hitboxLlamas;
-
+    [Header("UI")]
+    [SerializeField] Slider MunicionLlamas;
 
     private float tiempoactual;
     public bool disparandofuego = false;
@@ -24,7 +26,9 @@ public class Lanzallamas : MonoBehaviour {
         ControlBaston();
     }
 
-    private void ControlBaston() {//aumentar carga
+    private void ControlBaston() {
+        MunicionLlamas.value = cargamaxima-cargabaston;
+        //aumentar carga
         if (disparandofuego == false && cargabaston <= cargamaxima) {
             cargabaston += Time.deltaTime;
             if (cargabaston >= cargamaxima) {

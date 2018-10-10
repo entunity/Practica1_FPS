@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4065305814523078}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 4048199021162222}
   - component: {fileID: 33263829722737404}
   - component: {fileID: 23010783820062046}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: party hat cone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4937362881611952}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: party hat (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,7 +66,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4288944782004046}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: party hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 4379929738387072}
   - component: {fileID: 33307710767062532}
   - component: {fileID: 23445255483129304}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: baloon string
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 4810394486208932}
   - component: {fileID: 33872904127663084}
   - component: {fileID: 23342313153774076}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: balloon main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,10 +116,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4712811421079182}
   - component: {fileID: 33844962908443058}
-  - component: {fileID: 135387414983912544}
   - component: {fileID: 23691767841141118}
   - component: {fileID: 54945554402743178}
-  m_Layer: 0
+  - component: {fileID: 65380432037260172}
+  m_Layer: 8
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 114392446541048616}
   - component: {fileID: 54408540846384366}
   - component: {fileID: 136483761653481694}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Torre
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 54869337160284628}
   - component: {fileID: 136648574065188978}
   - component: {fileID: 114835462157320912}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Nucleo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 4632873412242612}
   - component: {fileID: 33832020173921358}
   - component: {fileID: 23491345316698438}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: party hat string
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4907750430139676}
   - component: {fileID: 33838410672058140}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Pto Disparo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 4444357270218750}
   - component: {fileID: 33912195612694304}
   - component: {fileID: 23323712543782984}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: party hat cone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4260529665416170}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Canon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 4943346701190588}
   - component: {fileID: 33555392035030882}
   - component: {fileID: 23604657176972820}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: party hat string
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 4779950230482868}
   - component: {fileID: 33196435285555116}
   - component: {fileID: 23026588953471640}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: vuvuzela
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1406304496314708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.669, y: 1, z: 1.51}
+  m_LocalPosition: {x: 4.29, y: 1, z: 6.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4752522646372092}
@@ -854,8 +854,20 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 122
   m_CollisionDetection: 0
+--- !u!65 &65380432037260172
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1399301616756908}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: -0.00000047683716, z: 0}
 --- !u!114 &114392446541048616
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -867,6 +879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f21e9c43b43168438821ed5d4b90932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vidaEnemigo: 5
   velocidad: 0.5
   TiempoCambioDireccion: 2
   BaseMovimiento: {fileID: 1399301616756908}
@@ -874,12 +887,11 @@ MonoBehaviour:
   danyo: 0
   distanciaExplosion: 0
   particulaExplosion: {fileID: 0}
-  estaPersiguiendo: 0
   distanciaDeteccion: 20
   canion: {fileID: 1719480004737138}
   baseDisparo: {fileID: 4907750430139676}
   disparo: {fileID: 4018049951113724, guid: 8a7fb4de8791d084abc13ca2fddb1c8c, type: 2}
-  tiempoentredisparos: 1
+  Tiempoentredisparos: 1
 --- !u!114 &114835462157320912
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -891,6 +903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9a8c118d9e0e1a46a4645c963fc44b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vidaEnemigo: 0
   velocidad: 0
   TiempoCambioDireccion: 0
   BaseMovimiento: {fileID: 0}
@@ -898,19 +911,6 @@ MonoBehaviour:
   danyo: 0
   distanciaExplosion: 0
   particulaExplosion: {fileID: 0}
-  estaPersiguiendo: 0
---- !u!135 &135387414983912544
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1399301616756908}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136483761653481694
 CapsuleCollider:
   m_ObjectHideFlags: 1
