@@ -33,7 +33,7 @@ public class EnemigoBase : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
+    public virtual void Update() {
         if (BaseMovimiento != null&&velocidad!=0)
         {
            this.transform.Translate(Vector3.forward * velocidad * Time.deltaTime);
