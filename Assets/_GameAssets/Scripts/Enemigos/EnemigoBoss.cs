@@ -9,7 +9,8 @@ public class EnemigoBoss : EnemigoAvanzado {
     [SerializeField] float TiempoSpawnEscudo;
 
     private float TimerSpawn;
-    private void LateUpdate() {
+    public override void Update() {
+        base.Update();
         TimerSpawn += Time.deltaTime;
         if (TimerSpawn >= TiempoSpawnEscudo) {
             GameObject respawn = protectores[Random.Range(0,protectores.Count())];

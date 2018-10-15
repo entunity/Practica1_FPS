@@ -21,6 +21,7 @@ public class Ballesta : MonoBehaviour {
         //disparo ballesta
         if (Time.time >= tiempoactual && (Input.GetButtonDown(Configuracion.botonDisparo))) {
             Instantiate(objetoACrear.gameObject, puntodisparo.transform.position, transform.rotation);
+            this.GetComponent<AudioSource>().Play();
             tiempoactual = Time.time + tiempoentredisparos;
         }
         if (Time.time >= tiempoactual) {

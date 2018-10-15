@@ -7,40 +7,46 @@ public class EnemigoBase : MonoBehaviour {
     [Header("Movimiento")]
     [SerializeField] private float velocidad;
     [SerializeField] private float TiempoCambioDireccion;
-    [SerializeField] private GameObject BaseMovimiento;
-    [SerializeField] private float AlturaMovimiento;
+    [SerializeField] public float AlturaMovimiento;
     private Vector3 direccion;
     private float TimerCambioDireccion;
+    private Ray Rayo;
+    private RaycastHit RayImpacto;
     [Header("Impacto")]
     [SerializeField] private float danyo;
     [SerializeField] private float distanciaExplosion;
-    [SerializeField] private ParticleSystem particulaExplosion;
-
+    private GameObject Explosion;
 
     [Header("Herencia")]
     protected GameObject player;
     protected bool estaPersiguiendo;
 
 
-    
-    
 
+
+    private void Awake() {
+
+        player = GameObject.FindGameObjectWithTag(Configuracion.tagPlayer);
+        Explosion = GameObject.Find(Configuracion.nombreParticulas);
+    }
     // Use this for initialization
     void Start() {
         cambiarDireccion();
-        player = GameObject.FindGameObjectWithTag(Configuracion.tagPlayer);
-        particulaExplosion = GameObject.Find(Configuracion.nombreParticulas).GetComponent<ParticleSystem>();
+        Rayo = new Ray(transform.position, Vector3.down);
     }
 
     // Update is called once per frame
-    void Update() {
-        if (BaseMovimiento != null&&velocidad!=0)
+    public virtual void Update() {
+        if (velocidad != 0)
         {
-           this.transform.Translate(Vector3.forward * velocidad * Time.deltaTime);
-           BaseMovimiento.transform.position = new Vector3(this.transform.position.x, BaseMovimiento.transform.position.y, this.transform.position.z);
-           this.transform.position = new Vector3(this.transform.position.x, BaseMovimiento.transform.position.y + AlturaMovimiento, this.transform.position.z);
+            this.transform.Translate(Vector3.forward * velocidad * Time.deltaTime);
+            //BaseMovimiento.transform.position = new Vector3(this.transform.position.x, BaseMovimiento.transform.position.y, this.transform.position.z);
+            //this.transform.position = new Vector3(this.transform.position.x, BaseMovimiento.transform.position.y + AlturaMovimiento, this.transform.position.z);
+            if (Physics.Raycast(Rayo, out RayImpacto, Mathf.Infinity) && RayImpacto.collider.tag == Configuracion.tagEntorno)
+            {
+                this.transform.position = new Vector3(this.transform.position.x, RayImpacto.point.y + AlturaMovimiento, this.transform.position.z);
 
-
+            }
             if (estaPersiguiendo == false)
             {
                 TimerCambioDireccion += Time.deltaTime;
@@ -61,7 +67,7 @@ public class EnemigoBase : MonoBehaviour {
         }
     }
     //mira la distancia al player
-    private float detectarDistanciaPersonaje() {
+    public float detectarDistanciaPersonaje() {
         return Vector3.Distance(this.transform.position, player.transform.position);
     }
     //cambia la direccion en la q mira
@@ -71,8 +77,9 @@ public class EnemigoBase : MonoBehaviour {
     }
     //destrulle el objeto o si no el padre
     public void morir() {
-        particulaExplosion.transform.position = this.transform.position;
-        particulaExplosion.Play();
+        Explosion.transform.position = this.transform.position;
+        Explosion.GetComponent<ParticleSystem>().Play();
+        Explosion.GetComponent<AudioSource>().Play();
         if (this.transform.parent == null) {
             Destroy(this.gameObject);
         } else {
