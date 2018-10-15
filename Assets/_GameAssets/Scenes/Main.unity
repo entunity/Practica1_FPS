@@ -286,7 +286,7 @@ Prefab:
     - target: {fileID: 65770901395582808, guid: fb01bf954af21d4439e933f63106cb08,
         type: 2}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1875900097171906, guid: fb01bf954af21d4439e933f63106cb08, type: 2}
       propertyPath: m_TagString
@@ -1867,7 +1867,8 @@ Prefab:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 54090776352045274, guid: 10948269b737e8a46b8bfb5887babbd8, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 10948269b737e8a46b8bfb5887babbd8, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1925861668

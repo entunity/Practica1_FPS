@@ -57,22 +57,5 @@ public class Jugador : MonoBehaviour {
         }
         listaArmas[arma].SetActive(true);
     }
-    private void OnTriggerEnter(Collider other) {
-        print(other.gameObject.name);
-        if (other.gameObject.tag == Configuracion.tagMunicion) {
-            Ballesta.PuedeDisparar = true;
-            Lanzallamas.cargabaston = Lanzallamas.cargamaxima;
-            Destroy(other.gameObject);
-        }
-    }
-    private void OnCollisionEnter(Collision collision) {
-        Debug.Log(collision.gameObject.name);
-        print(collision.gameObject.name);
-        if (collision.gameObject.tag == Configuracion.tagMunicion) {
-            Ballesta.PuedeDisparar = true;
-            Lanzallamas.cargabaston = Lanzallamas.cargamaxima;
-            Destroy(collision.gameObject);
-        }
-    }
 
 }
