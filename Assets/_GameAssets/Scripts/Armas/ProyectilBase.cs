@@ -22,13 +22,16 @@ public class ProyectilBase : MonoBehaviour {
         if (tiempoespera <= timer) {
             Destroy(this.gameObject);
         }
+        if (this.transform.position.y < -0.4) {
+            Paralizar();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        
         if ( (collision.gameObject.tag == Configuracion.tagEntorno)) {
-            this.velocidad = 0;
-            this.GetComponent<Rigidbody>().constraints= RigidbodyConstraints.FreezeAll;
+            Paralizar();
             //Destroy(this.gameObject);
         }
         else if ((collision.gameObject.tag == Configuracion.tagEnemigos))
@@ -36,8 +39,15 @@ public class ProyectilBase : MonoBehaviour {
             //collision.gameObject.GetComponent<>.vida -= danio;
             Destroy(this.gameObject);
         }
-
-
-
+    }
+    private void OnTriggerExit(Collider other) {
+        if ((other.gameObject.tag == Configuracion.tagEntorno)&&this.transform.position.y<4f) {
+            Paralizar();
+            //Destroy(this.gameObject);
+        }
+    }
+    private void Paralizar() {
+        this.velocidad = 0;
+        this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
 }

@@ -276,8 +276,9 @@
     <Compile Include="Assets\_GameAssets\Scripts\Enemigos\EnemigoEstatico.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\Enemigos\Orbitar.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\Escenario\MirarPlayer.cs" />
-    <Compile Include="Assets\_GameAssets\Scripts\Escenario\RecargarMunicion.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\Escenario\Recuperar.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\Escenario\Spawn.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\Escenario\VariarIluminacion.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\Jugador.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\Z_Desechados\NucleoEnem.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\Z_Desechados\TestRaycast.cs" />

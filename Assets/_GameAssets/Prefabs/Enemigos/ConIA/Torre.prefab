@@ -847,7 +847,7 @@ MonoBehaviour:
   AlturaMovimiento: 1
   danyo: 5
   distanciaExplosion: 1
-  particulaExplosion: {fileID: 0}
+  Explosion: {fileID: 4763682402049152, guid: 0923c864ba45f1542a95b28d02341806, type: 2}
   distanciaDeteccion: 20
   canion: {fileID: 1719480004737138}
   baseDisparo: {fileID: 4907750430139676}

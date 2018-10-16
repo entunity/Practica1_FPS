@@ -31,6 +31,7 @@ public class EnemigoEstatico : EnemigoBase {
         }
     }
     void disparar() {
-        Instantiate(disparo, baseDisparo.transform.position, canion.transform.rotation);
+        Quaternion rot= canion.transform.rotation;
+        Instantiate(disparo, baseDisparo.transform.position, new Quaternion(rot.x,0,0,0));
     }
 }

@@ -14,6 +14,9 @@ public class Spawn : MonoBehaviour {
     [SerializeField] List<Transform> EnemigosSpawn;
     private Transform EnemigoSpawn;
     private GameObject spawn;
+    [Header("Escenario")]
+    [SerializeField] GameObject Municion;
+    [SerializeField] GameObject Vida;
     [Header("Boss")]
     [SerializeField] GameObject PuntoSpawnBoss;
     private GameObject boss;
@@ -40,22 +43,23 @@ public class Spawn : MonoBehaviour {
         }
         if (Time.time <= (Configuracion.TiemposLvl[0] * Configuracion.MultiplicadorLvl))
         {
-            lvl = Configuracion.lvl1;
-            InfoLvl.text = "Lvl: 1";
+            CambiarLvl(Configuracion.lvl1, "Lvl: 1");
         }
         else if (Time.time <= (Configuracion.TiemposLvl[1] * Configuracion.MultiplicadorLvl))
         {
-            lvl = Configuracion.lvl2;
-            InfoLvl.text = "Lvl: 2";
+            CambiarLvl(Configuracion.lvl2, "Lvl: 2");
+            activarRecoleccionable(Municion);
         }
         else if (Time.time <= (Configuracion.TiemposLvl[2] * Configuracion.MultiplicadorLvl))
         {
-            lvl = Configuracion.lvl3;
-            InfoLvl.text = "Lvl: 3";
+            activarRecoleccionable(Vida);
+            CambiarLvl(Configuracion.lvl3, "Lvl: 3");
         }
         else if(bossFight==false) //hacer solo 1 vez
         {
+            activarRecoleccionable(Municion);
             SpawnBoss();
+            CambiarLvl(Configuracion.lvl1, "Boss");
         }
     }
     private void generarEnemigo() {
@@ -90,10 +94,8 @@ public class Spawn : MonoBehaviour {
     private void SpawnBoss()
     {
         bossFight = true;
-        lvl = Configuracion.lvl1;
         boss=Instantiate(EnemigosSpawn[3].gameObject, PuntoSpawnBoss.transform.position, PuntoSpawnBoss.transform.rotation);
         boss.GetComponent<Rigidbody>().AddRelativeForce(0, 350f, 350f);
-        InfoLvl.text = "Boss";
         PuntoSpawnBoss.SetActive(false);
         Invoke("ActivarBoss", 1.5f);
     }
@@ -103,5 +105,12 @@ public class Spawn : MonoBehaviour {
         Destroy(boss);
         }
     }
+    private void CambiarLvl(int[] LvlNuevo,string TextoLvl) {
+        this.lvl = LvlNuevo;
+        InfoLvl.text = TextoLvl;
+    }
+    private void activarRecoleccionable(GameObject objeto) {
 
+        objeto.SetActive(true);
+    }
 }

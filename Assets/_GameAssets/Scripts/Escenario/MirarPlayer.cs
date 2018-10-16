@@ -6,7 +6,7 @@ public class MirarPlayer : MonoBehaviour {
 
     //Datos
     protected GameObject player;
-    private float speed = 2.0f;
+    private float speed /*= 2.0f*/;
     private float altura = 1f;
     //Posicion
     private Vector3 playerXZ;
@@ -19,6 +19,7 @@ public class MirarPlayer : MonoBehaviour {
     }
     void Start () {
         this.transform.position = new Vector3(PosicionInicial.x, Random.Range(PosicionInicial.y, PosicionFinal.y), PosicionInicial.z);
+        speed = Random.Range(1.5f, 2.5f);
     }
 	
 	// Update is called once per frame

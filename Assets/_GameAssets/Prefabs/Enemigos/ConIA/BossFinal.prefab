@@ -1428,6 +1428,7 @@ MonoBehaviour:
   AlturaMovimiento: 0
   danyo: 0
   distanciaExplosion: 0
+  Explosion: {fileID: 0}
   distanciaDeteccion: 30
   canion: {fileID: 1919394063838642}
   baseDisparo: {fileID: 4660712426381942}
@@ -1475,7 +1476,8 @@ MonoBehaviour:
   TiempoCambioDireccion: 1
   AlturaMovimiento: 1
   danyo: 100
-  distanciaExplosion: 2
+  distanciaExplosion: 3
+  Explosion: {fileID: 4763682402049152, guid: 0923c864ba45f1542a95b28d02341806, type: 2}
   DistanciaPersecucion: 20
   protectores:
   - {fileID: 1452422297362122}

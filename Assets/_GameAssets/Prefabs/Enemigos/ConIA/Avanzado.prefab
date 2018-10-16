@@ -1015,6 +1015,7 @@ MonoBehaviour:
   AlturaMovimiento: 1
   danyo: 10
   distanciaExplosion: 2
+  Explosion: {fileID: 4763682402049152, guid: 0923c864ba45f1542a95b28d02341806, type: 2}
   DistanciaPersecucion: 10
 --- !u!114 &114339016091183982
 MonoBehaviour:

@@ -9,11 +9,8 @@ public class Jugador : MonoBehaviour {
     [Header("Jugador")]
     [SerializeField] List<GameObject> listaArmas;
     [SerializeField] Camera camara;
-    [SerializeField] float MaxVidaPlayer;
-    [Header("Interfaz")]
-    [SerializeField] Slider BarraVida;
-    [SerializeField] Text TextoVida;
-
+    [SerializeField] float PonerMaxVidaPlayer;
+    public static float MaxVidaPlayer;
     public static float VidaPlayer;
     public static float DanioPlayer = 0;
     public enum enumArmas : int {
@@ -21,9 +18,14 @@ public class Jugador : MonoBehaviour {
         lanzallamas = 1
 
     }
+    [Header("Interfaz")]
+    [SerializeField] Slider BarraVida;
+    [SerializeField] Text TextoVida;
+    
     void Start() {
         Jugador.DanioPlayer = 5;
-        VidaPlayer = MaxVidaPlayer;
+        VidaPlayer = PonerMaxVidaPlayer;
+        MaxVidaPlayer = PonerMaxVidaPlayer;
     }
     void Update() {
         controlArma();

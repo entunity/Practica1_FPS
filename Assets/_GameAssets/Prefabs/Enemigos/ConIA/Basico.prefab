@@ -227,6 +227,7 @@ MonoBehaviour:
   AlturaMovimiento: 1
   danyo: 5
   distanciaExplosion: 2
+  Explosion: {fileID: 4763682402049152, guid: 0923c864ba45f1542a95b28d02341806, type: 2}
 --- !u!136 &136288644350179416
 CapsuleCollider:
   m_ObjectHideFlags: 1

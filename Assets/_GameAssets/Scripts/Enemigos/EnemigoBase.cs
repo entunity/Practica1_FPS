@@ -15,7 +15,7 @@ public class EnemigoBase : MonoBehaviour {
     [Header("Impacto")]
     [SerializeField] private float danyo;
     [SerializeField] private float distanciaExplosion;
-    private GameObject Explosion;
+    [SerializeField] Transform Explosion;
 
     [Header("Herencia")]
     protected GameObject player;
@@ -25,9 +25,7 @@ public class EnemigoBase : MonoBehaviour {
 
 
     private void Awake() {
-
         player = GameObject.FindGameObjectWithTag(Configuracion.tagPlayer);
-        Explosion = GameObject.Find(Configuracion.nombreParticulas);
     }
     // Use this for initialization
     void Start() {
@@ -60,6 +58,9 @@ public class EnemigoBase : MonoBehaviour {
             if (detectarDistanciaPersonaje() < distanciaExplosion)
             {
                 Jugador.VidaPlayer -= danyo;
+                if (Jugador.VidaPlayer < 0) {
+                    Jugador.VidaPlayer = 0;
+                        }
                 morir();
                 Debug.Log("Vida: " + Jugador.VidaPlayer);
 
@@ -77,9 +78,10 @@ public class EnemigoBase : MonoBehaviour {
     }
     //destrulle el objeto o si no el padre
     public void morir() {
-        Explosion.transform.position = this.transform.position;
-        Explosion.GetComponent<ParticleSystem>().Play();
-        Explosion.GetComponent<AudioSource>().Play();
+
+        Instantiate(Explosion.gameObject, this.transform.position,this.transform.rotation);
+        //Explosion.GetComponent<ParticleSystem>().Play();
+        //Explosion.GetComponent<AudioSource>().Play();
         if (this.transform.parent == null) {
             Destroy(this.gameObject);
         } else {
