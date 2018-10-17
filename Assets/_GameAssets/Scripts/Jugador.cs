@@ -9,43 +9,47 @@ public class Jugador : MonoBehaviour {
     [Header("Jugador")]
     [SerializeField] List<GameObject> listaArmas;
     [SerializeField] Camera camara;
-    [SerializeField] float PonerMaxVidaPlayer;
-    public static float MaxVidaPlayer;
-    public static float VidaPlayer;
-    public static float DanioPlayer = 0;
+    [SerializeField] float ponerMaxVidaPlayer;
+    public static float maxVidaPlayer;
+    public static float vidaPlayer;
+    public static float danioPlayer = 0;
     public enum enumArmas : int {
         ballesta = 0,
         lanzallamas = 1
 
     }
     [Header("Interfaz")]
-    [SerializeField] Slider BarraVida;
-    [SerializeField] Text TextoVida;
-    
+    [SerializeField] private Slider BarraVida;
+    [SerializeField] private Text TextoVida;
+    //[SerializeField] private Canvas dialogo;
+    //[SerializeField] private Text PonerTextoDialogo;
+    //[SerializeField] private Image fotoEnemigo;
+    public static Text TextoDialogo;
     void Start() {
-        Jugador.DanioPlayer = 5;
-        VidaPlayer = PonerMaxVidaPlayer;
-        MaxVidaPlayer = PonerMaxVidaPlayer;
+        Jugador.danioPlayer = 5;
+        vidaPlayer = ponerMaxVidaPlayer;
+        maxVidaPlayer = ponerMaxVidaPlayer;
     }
     void Update() {
         controlArma();
         ControlUi();
+        //PonerTextoDialogo = TextoDialogo;
         //ocultarArmas(armaActiva);
     }
     private void ControlUi() {
-        BarraVida.value = VidaPlayer/ MaxVidaPlayer;
-        TextoVida.text = VidaPlayer + "/"+ MaxVidaPlayer;
+        BarraVida.value = vidaPlayer/ maxVidaPlayer;
+        TextoVida.text = vidaPlayer + "/"+ maxVidaPlayer;
        
     }
     private void controlArma() {
         if (Input.GetKeyDown(Configuracion.botonArma1)){
             ActivarArmas((int)Jugador.enumArmas.ballesta);
-            Jugador.DanioPlayer = 5;
+            Jugador.danioPlayer = 5;
         }
         if (Input.GetKeyDown(Configuracion.botonArma2))
         {
             ActivarArmas((int)Jugador.enumArmas.lanzallamas);
-            Jugador.DanioPlayer = 1;
+            Jugador.danioPlayer = 1;
         }
         if (Input.GetButton(Configuracion.botonZoom)) {
             camara.fieldOfView = Configuracion.FovZoom;
@@ -59,5 +63,7 @@ public class Jugador : MonoBehaviour {
         }
         listaArmas[arma].SetActive(true);
     }
-
+    /*public static void MostrarTexto(String TextoDial) {
+        TextoDialogo.text = TextoDial;
+    }*/
 }

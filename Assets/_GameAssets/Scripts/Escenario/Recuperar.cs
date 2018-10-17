@@ -27,7 +27,7 @@ public class Recuperar : MonoBehaviour {
                 Lanzallamas.cargabaston = Lanzallamas.cargamaxima;
             }
             else if (recargar == 2) {
-                Jugador.VidaPlayer = Jugador.MaxVidaPlayer;
+                Jugador.vidaPlayer = Jugador.maxVidaPlayer;
             }
             //Destroy(this.gameObject);
             this.enabled = false;

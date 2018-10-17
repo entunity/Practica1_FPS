@@ -11,9 +11,9 @@ public class Bala : ProyectilBase {
             Destroy(this.gameObject);
         }else if ((collision.gameObject.tag == Configuracion.tagPlayer && chocado == false))
         {
-            Jugador.VidaPlayer -= danio;
+            Jugador.vidaPlayer -= danio;
             chocado = true;
-            Debug.Log("Vida: " + Jugador.VidaPlayer);
+            Debug.Log("Vida: " + Jugador.vidaPlayer);
             Destroy(this.gameObject);
 
         }

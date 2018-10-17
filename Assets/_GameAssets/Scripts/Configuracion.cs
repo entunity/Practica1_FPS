@@ -27,4 +27,7 @@ public class Configuracion : MonoBehaviour {
     //player
     public static float FovPlayer=60;
     public static float FovZoom = 20;
+    //nombre Lvl
+    public static string Intro = "Intro";
+    public static string LvlJugable = "LvlJugable";
 }

@@ -57,12 +57,12 @@ public class EnemigoBase : MonoBehaviour {
             //comprueba si toca al personaje para hacerle daño
             if (detectarDistanciaPersonaje() < distanciaExplosion)
             {
-                Jugador.VidaPlayer -= danyo;
-                if (Jugador.VidaPlayer < 0) {
-                    Jugador.VidaPlayer = 0;
+                Jugador.vidaPlayer -= danyo;
+                if (Jugador.vidaPlayer < 0) {
+                    Jugador.vidaPlayer = 0;
                         }
                 morir();
-                Debug.Log("Vida: " + Jugador.VidaPlayer);
+                Debug.Log("Vida: " + Jugador.vidaPlayer);
 
             }
         }
@@ -93,7 +93,7 @@ public class EnemigoBase : MonoBehaviour {
             cambiarDireccion();
         }
         if ((collision.gameObject.tag == Configuracion.tagMunicion)) {
-            this.vidaEnemigo -= Jugador.DanioPlayer;
+            this.vidaEnemigo -= Jugador.danioPlayer;
             //this.transform.localScale -= new Vector3(0.2f, 0.2f, 0.2f);
             if (vidaEnemigo <= 0) {
                 morir();
