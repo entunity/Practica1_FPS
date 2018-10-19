@@ -23,12 +23,17 @@ public class Spawn : MonoBehaviour {
     private bool bossFight = false;
     [Header("UILvl")]
     [SerializeField] Text InfoLvl;
+    [SerializeField] Sprite[] spriteBoss;
     [SerializeField] Text InfoTiempo;
     private float timer;
     private int[] lvl;
+    private GameObject player;
+    private bool spokenLvl2;
+    private bool spokenLvl3;
     // Use this for initialization
     void Start () {
         lvl = Configuracion.lvl1;
+        player=GameObject.Find(Configuracion.tagPlayer);
     }
 	
 	// Update is called once per frame
@@ -47,19 +52,30 @@ public class Spawn : MonoBehaviour {
         }
         else if (Time.time <= (Configuracion.TiemposLvl[1] * Configuracion.MultiplicadorLvl))
         {
-            CambiarLvl(Configuracion.lvl2, "Lvl: 2");
-            activarRecoleccionable(Municion);
+            
+            
+            if (spokenLvl2 == false) {
+                CambiarLvl(Configuracion.lvl2, "Lvl: 2");
+                activarRecoleccionable(Municion);
+                player.GetComponentInChildren<Jugador>().MostrarTexto(Frases.lineas4, spriteBoss, 1);
+                spokenLvl2 = true;
+            }
         }
         else if (Time.time <= (Configuracion.TiemposLvl[2] * Configuracion.MultiplicadorLvl))
         {
-            activarRecoleccionable(Vida);
-            CambiarLvl(Configuracion.lvl3, "Lvl: 3");
+            if (spokenLvl3 == false) {
+                activarRecoleccionable(Vida);
+                CambiarLvl(Configuracion.lvl3, "Lvl: 3");
+                player.GetComponentInChildren<Jugador>().MostrarTexto(Frases.lineas5, spriteBoss, 1);
+                spokenLvl3 = true;
+            }
         }
-        else if(bossFight==false) //hacer solo 1 vez
+        else if(bossFight==false)
         {
             activarRecoleccionable(Municion);
             SpawnBoss();
             CambiarLvl(Configuracion.lvl1, "Boss");
+            player.GetComponentInChildren<Jugador>().MostrarTexto(Frases.lineas6, spriteBoss, 1);
         }
     }
     private void generarEnemigo() {
@@ -107,7 +123,7 @@ public class Spawn : MonoBehaviour {
     }
     private void CambiarLvl(int[] LvlNuevo,string TextoLvl) {
         this.lvl = LvlNuevo;
-        InfoLvl.text = TextoLvl;
+        //InfoLvl.text = TextoLvl;
     }
     private void activarRecoleccionable(GameObject objeto) {
 

@@ -25,12 +25,12 @@ public class Recuperar : MonoBehaviour {
             if (recargar == 1) {
                 Ballesta.PuedeDisparar = true;
                 Lanzallamas.cargabaston = Lanzallamas.cargamaxima;
+                
             }
             else if (recargar == 2) {
                 Jugador.vidaPlayer = Jugador.maxVidaPlayer;
             }
-            //Destroy(this.gameObject);
-            this.enabled = false;
+            this.gameObject.SetActive(false);
         }
     }
 }

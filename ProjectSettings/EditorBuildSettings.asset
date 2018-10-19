@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_GameAssets/Scenes/LvlJugable.unity
     guid: 2f38af3cf942fff47992ccdcd7ce31a1
+  - enabled: 1
+    path: Assets/_GameAssets/Scenes/Transporte.unity
+    guid: 7b4d0e40c50b47443bbec5ae7ed9a2a2

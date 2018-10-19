@@ -12,6 +12,8 @@ public class EnemigoBase : MonoBehaviour {
     private float TimerCambioDireccion;
     private Ray Rayo;
     private RaycastHit RayImpacto;
+    private float maxVida;
+    private Vector3 escalaActual;
     [Header("Impacto")]
     [SerializeField] private float danyo;
     [SerializeField] private float distanciaExplosion;
@@ -31,6 +33,8 @@ public class EnemigoBase : MonoBehaviour {
     void Start() {
         cambiarDireccion();
         Rayo = new Ray(transform.position, Vector3.down);
+        maxVida = vidaEnemigo;
+        escalaActual = this.transform.localScale;
     }
 
     // Update is called once per frame
@@ -65,6 +69,8 @@ public class EnemigoBase : MonoBehaviour {
                 Debug.Log("Vida: " + Jugador.vidaPlayer);
 
             }
+            float cambio= this.vidaEnemigo/maxVida;
+            this.transform.localScale = escalaActual * cambio;
         }
     }
     //mira la distancia al player
@@ -94,12 +100,19 @@ public class EnemigoBase : MonoBehaviour {
         }
         if ((collision.gameObject.tag == Configuracion.tagMunicion)) {
             this.vidaEnemigo -= Jugador.danioPlayer;
-            //this.transform.localScale -= new Vector3(0.2f, 0.2f, 0.2f);
             if (vidaEnemigo <= 0) {
                 morir();
             }
         }
     }
- }
+    private void OnTriggerStay(Collider other) {
+            if ((other.gameObject.tag == Configuracion.tagMunicion)) {
+                this.vidaEnemigo -= Jugador.danioPlayer;
+                if (vidaEnemigo <= 0) {
+                    morir();
+                }
+            }
+    }
+}
     
 

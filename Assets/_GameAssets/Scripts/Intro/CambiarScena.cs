@@ -1,22 +1,16 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class CambiarScena : MonoBehaviour {
     [SerializeField] Transform particula;
-    [SerializeField] int numeroParticulas;
+    [SerializeField] Sprite[] fotos;
+    [SerializeField] float tiempoEntreFrases;
     private GameObject objeto;
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
     private void OnTriggerEnter(Collider other) {
         
         if (other.tag == Configuracion.tagPlayer) {
@@ -27,7 +21,9 @@ public class CambiarScena : MonoBehaviour {
             CrearParticulas(other.gameObject, new Vector3(-2f, 0, 0));
             CrearParticulas(other.gameObject, new Vector3(0, 2f, 0));
             CrearParticulas(other.gameObject, new Vector3(0, -2f, 0));
-            Invoke("Cambio", 5);
+            
+            other.GetComponentInChildren<Jugador>().MostrarTexto(Frases.lineas2, fotos, tiempoEntreFrases);
+            Invoke("Cambio", tiempoEntreFrases* Frases.lineas2.Length);
         }
     }
     private void CrearParticulas(GameObject player,Vector3 distancia) {
@@ -35,6 +31,9 @@ public class CambiarScena : MonoBehaviour {
         objeto.GetComponent<Orbitar>().target = player.transform;
     }
     private void Cambio() {
-        SceneManager.LoadScene(Configuracion.LvlJugable);
+        SceneManager.LoadScene(Configuracion.Transporte);
+    }
+    public static void Cambio(String escena) {
+        SceneManager.LoadScene(escena);
     }
 }

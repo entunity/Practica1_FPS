@@ -10,6 +10,7 @@ public class Lanzallamas : MonoBehaviour {
     [SerializeField] ParticleSystem Fuego;
     [SerializeField] float PonerCargabaston;
     [SerializeField] GameObject hitboxLlamas;
+    [SerializeField] float multiplicadorCargar;
     [Header("UI")]
     [SerializeField] Slider MunicionLlamas;
 
@@ -32,30 +33,41 @@ public class Lanzallamas : MonoBehaviour {
         MunicionLlamas.value = cargamaxima-cargabaston;
         //aumentar carga
         if (disparandofuego == false && cargabaston <= cargamaxima) {
-            cargabaston += Time.deltaTime;
+            cargabaston += Time.deltaTime/multiplicadorCargar;
             if (cargabaston >= cargamaxima) {
                 cargabaston = cargamaxima;
             }
         }
         // apagado baston
-
-        if (cargabaston <= 0 || (Input.GetButtonDown(Configuracion.botonDisparo) && disparandofuego == true)) {
+        if (cargabaston <= 0 || (Input.GetButtonUp(Configuracion.botonDisparo) && disparandofuego == true)) {
             Fuego.Stop();
             hitboxLlamas.SetActive(false);
             disparandofuego = false;
             this.GetComponent<AudioSource>().Stop();
         }
+        /*else if (cargabaston <= 0 || (Input.GetButtonDown(Configuracion.botonDisparo) && disparandofuego == true)) {
+            Fuego.Stop();
+            hitboxLlamas.SetActive(false);
+            disparandofuego = false;
+            this.GetComponent<AudioSource>().Stop();
+        }*/
         //encendido baston
-        else if ((Input.GetButtonDown(Configuracion.botonDisparo) && disparandofuego == false)) {
+        else if ((Input.GetButton(Configuracion.botonDisparo) && disparandofuego == false)) {
             Fuego.Play();
             hitboxLlamas.SetActive(true);
             disparandofuego = true;
             this.GetComponent<AudioSource>().Play();
         }
-
+         /*else if ((Input.GetButtonDown(Configuracion.botonDisparo) && disparandofuego == false)) {
+            Fuego.Play();
+            hitboxLlamas.SetActive(true);
+            disparandofuego = true;
+            this.GetComponent<AudioSource>().Play();
+        }*/
         //disminuir carga
         else if (disparandofuego == true) {
             cargabaston -= Time.deltaTime;
-        }
+        } 
+        
     }
 }
