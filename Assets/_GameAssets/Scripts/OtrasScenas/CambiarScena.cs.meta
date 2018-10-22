@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1a0ab9d685d9d2b46a6100aa4049dc86
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - particula: {instanceID: 0}
+  - textoFinal: {instanceID: 0}
+  - win: {fileID: 8300000, guid: a46fd156f8b3626498de1570591c1ffc, type: 3}
+  - lose: {fileID: 8300000, guid: e70fa012a4b9f6c438746ad1973fedf4, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemigoBase : MonoBehaviour {
-    [SerializeField] private float vidaEnemigo;
+    [Header("Datos")]
+    [SerializeField] public float vidaEnemigo;
+    protected float maxVida;
+    private Vector3 escalaActual;
     [Header("Movimiento")]
     [SerializeField] private float velocidad;
     [SerializeField] private float TiempoCambioDireccion;
@@ -30,7 +33,9 @@ public class EnemigoBase : MonoBehaviour {
     // Use this for initialization
     void Start() {
         cambiarDireccion();
-        Rayo = new Ray(transform.position, Vector3.down);
+        
+        maxVida = vidaEnemigo;
+        escalaActual = this.transform.lossyScale;
     }
 
     // Update is called once per frame
@@ -40,11 +45,7 @@ public class EnemigoBase : MonoBehaviour {
             this.transform.Translate(Vector3.forward * velocidad * Time.deltaTime);
             //BaseMovimiento.transform.position = new Vector3(this.transform.position.x, BaseMovimiento.transform.position.y, this.transform.position.z);
             //this.transform.position = new Vector3(this.transform.position.x, BaseMovimiento.transform.position.y + AlturaMovimiento, this.transform.position.z);
-            if (Physics.Raycast(Rayo, out RayImpacto, Mathf.Infinity) && RayImpacto.collider.tag == Configuracion.tagEntorno)
-            {
-                this.transform.position = new Vector3(this.transform.position.x, RayImpacto.point.y + AlturaMovimiento, this.transform.position.z);
-
-            }
+            
             if (estaPersiguiendo == false)
             {
                 TimerCambioDireccion += Time.deltaTime;
@@ -63,6 +64,23 @@ public class EnemigoBase : MonoBehaviour {
                         }
                 morir();
                 Debug.Log("Vida: " + Jugador.vidaPlayer);
+
+            }
+            float cambio= this.vidaEnemigo/maxVida;
+            if(this.gameObject.name.Contains("Boss"))
+            this.transform.localScale = escalaActual * cambio;
+            if (this.vidaEnemigo <= 0)
+            {
+                morir();
+            }
+        }
+    }
+    private void FixedUpdate() {
+        if (velocidad != 0) {
+            Rayo = new Ray(transform.position, Vector3.down);
+            if (Physics.Raycast(Rayo, out RayImpacto, Mathf.Infinity) && RayImpacto.collider.tag == Configuracion.tagEntorno) {
+                this.transform.position = new Vector3(this.transform.position.x, RayImpacto.point.y + AlturaMovimiento, this.transform.position.z);
+                print(RayImpacto.point.y);
 
             }
         }
@@ -94,12 +112,19 @@ public class EnemigoBase : MonoBehaviour {
         }
         if ((collision.gameObject.tag == Configuracion.tagMunicion)) {
             this.vidaEnemigo -= Jugador.danioPlayer;
-            //this.transform.localScale -= new Vector3(0.2f, 0.2f, 0.2f);
             if (vidaEnemigo <= 0) {
                 morir();
             }
         }
     }
- }
+    private void OnTriggerStay(Collider other) {
+            if ((other.gameObject.tag == Configuracion.tagMunicion)) {
+                this.vidaEnemigo -= Jugador.danioPlayer;
+                if (vidaEnemigo <= 0) {
+                    morir();
+                }
+            }
+    }
+}
     
 

@@ -890,7 +890,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5c45878ca74da4f41a3a933a01003b72, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -972,6 +972,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 4030516104922524}
   velocidadGradosSeg: 360
+  vidaEnemigo: 1
 --- !u!114 &114066353850636926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -985,6 +986,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 4030516104922524}
   velocidadGradosSeg: 360
+  vidaEnemigo: 1
 --- !u!114 &114160586914866352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -998,6 +1000,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 4030516104922524}
   velocidadGradosSeg: 360
+  vidaEnemigo: 1
 --- !u!114 &114190198715430630
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1030,6 +1033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 4030516104922524}
   velocidadGradosSeg: 360
+  vidaEnemigo: 1
 --- !u!114 &114460490195417396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1043,6 +1047,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 4030516104922524}
   velocidadGradosSeg: 360
+  vidaEnemigo: 1
 --- !u!114 &114486017053105322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1056,6 +1061,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 4030516104922524}
   velocidadGradosSeg: 360
+  vidaEnemigo: 1
 --- !u!114 &114854152004661550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1069,6 +1075,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 4030516104922524}
   velocidadGradosSeg: 360
+  vidaEnemigo: 1
 --- !u!114 &114963336454794430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1082,6 +1089,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 4030516104922524}
   velocidadGradosSeg: 360
+  vidaEnemigo: 1
 --- !u!136 &136051562474810306
 CapsuleCollider:
   m_ObjectHideFlags: 1

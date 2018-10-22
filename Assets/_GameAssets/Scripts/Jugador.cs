@@ -21,20 +21,25 @@ public class Jugador : MonoBehaviour {
     [Header("Interfaz")]
     [SerializeField] private Slider BarraVida;
     [SerializeField] private Text TextoVida;
-    //[SerializeField] private Canvas dialogo;
-    //[SerializeField] private Text PonerTextoDialogo;
-    //[SerializeField] private Image fotoEnemigo;
-    public static Text TextoDialogo;
+    [SerializeField] GameObject dialogo;
+    [SerializeField] Image fotoEnemigo;
+    [SerializeField] Text textoDialogo;
+    private String[] textosDial;
+    private Sprite[] fotosDial;
+    public static int lineaActual;
     void Start() {
-        Jugador.danioPlayer = 5;
+        danioPlayer = 5;
         vidaPlayer = ponerMaxVidaPlayer;
         maxVidaPlayer = ponerMaxVidaPlayer;
+        //dialogo.SetActive(false);
     }
     void Update() {
         controlArma();
         ControlUi();
-        //PonerTextoDialogo = TextoDialogo;
         //ocultarArmas(armaActiva);
+        if (vidaPlayer <= 0) {
+            CambiarScena.CambiarScene(Configuracion.Final, false);
+        }
     }
     private void ControlUi() {
         BarraVida.value = vidaPlayer/ maxVidaPlayer;
@@ -51,11 +56,7 @@ public class Jugador : MonoBehaviour {
             ActivarArmas((int)Jugador.enumArmas.lanzallamas);
             Jugador.danioPlayer = 1;
         }
-        if (Input.GetButton(Configuracion.botonZoom)) {
-            camara.fieldOfView = Configuracion.FovZoom;
-        } else {
-            camara.fieldOfView = Configuracion.FovPlayer;
-        }
+        
     }
     private void ActivarArmas(int arma) {
         for (int n = 0; n < listaArmas.Count; n++) {
@@ -63,7 +64,21 @@ public class Jugador : MonoBehaviour {
         }
         listaArmas[arma].SetActive(true);
     }
-    /*public static void MostrarTexto(String TextoDial) {
-        TextoDialogo.text = TextoDial;
-    }*/
+    public void MostrarTexto(String[] textos,Sprite[] fotos,float tiempo) {
+        
+        dialogo.SetActive(true);
+        lineaActual =0;
+        this.textosDial = textos;
+        this.fotosDial = fotos;
+        InvokeRepeating("CambiarTexto", 0, tiempo);
+    }
+    public void CambiarTexto() {
+        textoDialogo.text = textosDial[lineaActual];
+        fotoEnemigo.sprite = fotosDial[UnityEngine.Random.Range(0, fotosDial.Length)];
+        lineaActual += 1;
+        if (lineaActual == textosDial.Length) {
+            CancelInvoke();
+            dialogo.SetActive(false);
+        }
+    }
 }

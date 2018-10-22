@@ -13,7 +13,11 @@ public class EnemigoEstatico : EnemigoBase {
     private Vector3 playerXZ;
     protected Quaternion RotacionActual;
     protected float VelocidadRotacion=6f;
-
+    private float variacion=1.1f;
+    private AudioSource sonidoDisparo;
+    private void Start() {
+        sonidoDisparo = canion.GetComponent<AudioSource>();
+    }
     public override void Update() {
         base.Update();
         if (detectarDistanciaPersonaje() < distanciaDeteccion) {
@@ -32,6 +36,8 @@ public class EnemigoEstatico : EnemigoBase {
     }
     void disparar() {
         Quaternion rot= canion.transform.rotation;
-        Instantiate(disparo, baseDisparo.transform.position, new Quaternion(rot.x,0,0,0));
+        rot = new Quaternion(rot.x*Random.Range(1, variacion), rot.y * Random.Range(1, variacion), rot.z * Random.Range(1, variacion), rot.w * Random.Range(1, variacion));
+        Instantiate(disparo, baseDisparo.transform.position, rot);
+        sonidoDisparo.Play();
     }
 }

@@ -266,6 +266,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_GameAssets\Scripts\Armas\Ballesta.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\Armas\ExplosionFuego.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\Armas\Lanzallamas.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\Armas\ProyectilBase.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\Configuracion.cs" />
@@ -275,15 +276,18 @@
     <Compile Include="Assets\_GameAssets\Scripts\Enemigos\EnemigoBoss.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\Enemigos\EnemigoEstatico.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\Enemigos\Orbitar.cs" />
-    <Compile Include="Assets\_GameAssets\Scripts\Escenario\Frases.cs" />
-    <Compile Include="Assets\_GameAssets\Scripts\Escenario\MirarPlayer.cs" />
-    <Compile Include="Assets\_GameAssets\Scripts\Escenario\Recuperar.cs" />
-    <Compile Include="Assets\_GameAssets\Scripts\Escenario\Spawn.cs" />
-    <Compile Include="Assets\_GameAssets\Scripts\Escenario\VariarIluminacion.cs" />
-    <Compile Include="Assets\_GameAssets\Scripts\Intro\ActivarMovimientoIntro.cs" />
-    <Compile Include="Assets\_GameAssets\Scripts\Intro\CambiarScena.cs" />
-    <Compile Include="Assets\_GameAssets\Scripts\Intro\MoverBichosIntro.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\EscenarioJugable\MirarPlayer.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\EscenarioJugable\Recuperar.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\EscenarioJugable\Spawn.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\EscenarioJugable\Trampas.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\EscenarioJugable\VariarIluminacion.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\Frases.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\Jugador.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\OtrasScenas\ActivarMovimientoIntro.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\OtrasScenas\Borrar.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\OtrasScenas\CambiarScena.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\OtrasScenas\MoverBichosIntro.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\OtrasScenas\Transporte.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\Z_Desechados\NucleoEnem.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\Z_Desechados\TestRaycast.cs" />
     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Icosphere FFT\Scripts\CameraControls.cs" />

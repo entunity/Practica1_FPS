@@ -7,6 +7,7 @@ public class Orbitar : MonoBehaviour
 
 	public Transform target;
     public float velocidadGradosSeg = 360.0f;
+    public float vidaEnemigo=1;
 
     // Use this for initialization
     void Start()
@@ -18,7 +19,10 @@ public class Orbitar : MonoBehaviour
     {
 
         Orbit();
-
+        if (this.vidaEnemigo <= 0) {
+            this.GetComponent<Renderer>().enabled = false;
+            this.GetComponent<Collider>().enabled = false;
+        }
     }
 
     void Orbit()
