@@ -24,6 +24,7 @@ public class Spawn : MonoBehaviour {
     private bool bossFight = false;
     [Header("UILvl")]
     [SerializeField] Text InfoLvl;
+<<<<<<< HEAD:Assets/_GameAssets/Scripts/EscenarioJugable/Spawn.cs
     [SerializeField] public Sprite[] spriteBoss;
     [SerializeField] Text InfoTiempo;
     private float timer=0;
@@ -32,11 +33,23 @@ public class Spawn : MonoBehaviour {
     private bool spokenLvl2;
     private bool spokenLvl3;
     private int timepoActual;
+=======
+    [SerializeField] Sprite[] spriteBoss;
+    [SerializeField] Text InfoTiempo;
+    private float timer;
+    private int[] lvl;
+    private GameObject player;
+    private bool spokenLvl2;
+    private bool spokenLvl3;
+>>>>>>> f9348683a4de031621bdfc09079c3aa23d6bf04b:Assets/_GameAssets/Scripts/Escenario/Spawn.cs
     // Use this for initialization
     void Start () {
         lvl = Configuracion.lvl1;
         player=GameObject.Find(Configuracion.tagPlayer);
+<<<<<<< HEAD:Assets/_GameAssets/Scripts/EscenarioJugable/Spawn.cs
         MaxTiempoSpawn = TiempoSpawn;
+=======
+>>>>>>> f9348683a4de031621bdfc09079c3aa23d6bf04b:Assets/_GameAssets/Scripts/Escenario/Spawn.cs
     }
 	
 	// Update is called once per frame
@@ -63,7 +76,11 @@ public class Spawn : MonoBehaviour {
             if (spokenLvl2 == false) {
                 CambiarLvl(Configuracion.lvl2, "Lvl: 2");
                 activarRecoleccionable(Municion);
+<<<<<<< HEAD:Assets/_GameAssets/Scripts/EscenarioJugable/Spawn.cs
                 dialogo(Frases.lineas4, spriteBoss, Configuracion.tiempoDialogos);
+=======
+                player.GetComponentInChildren<Jugador>().MostrarTexto(Frases.lineas4, spriteBoss, 1);
+>>>>>>> f9348683a4de031621bdfc09079c3aa23d6bf04b:Assets/_GameAssets/Scripts/Escenario/Spawn.cs
                 spokenLvl2 = true;
             }
         }
@@ -72,7 +89,11 @@ public class Spawn : MonoBehaviour {
             if (spokenLvl3 == false) {
                 activarRecoleccionable(Vida);
                 CambiarLvl(Configuracion.lvl3, "Lvl: 3");
+<<<<<<< HEAD:Assets/_GameAssets/Scripts/EscenarioJugable/Spawn.cs
                 dialogo(Frases.lineas5, spriteBoss, Configuracion.tiempoDialogos);
+=======
+                player.GetComponentInChildren<Jugador>().MostrarTexto(Frases.lineas5, spriteBoss, 1);
+>>>>>>> f9348683a4de031621bdfc09079c3aa23d6bf04b:Assets/_GameAssets/Scripts/Escenario/Spawn.cs
                 spokenLvl3 = true;
             }
         }
@@ -80,6 +101,11 @@ public class Spawn : MonoBehaviour {
         {
             activarRecoleccionable(Municion);
             SpawnBoss();
+<<<<<<< HEAD:Assets/_GameAssets/Scripts/EscenarioJugable/Spawn.cs
+=======
+            CambiarLvl(Configuracion.lvl1, "Boss");
+            player.GetComponentInChildren<Jugador>().MostrarTexto(Frases.lineas6, spriteBoss, 1);
+>>>>>>> f9348683a4de031621bdfc09079c3aa23d6bf04b:Assets/_GameAssets/Scripts/Escenario/Spawn.cs
         }
     }
     private void generarEnemigo() {

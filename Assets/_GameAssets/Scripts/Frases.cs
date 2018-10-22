@@ -35,6 +35,7 @@ public class Frases : MonoBehaviour {
         "¡PREPARATE PARA MORIR! ",
         "" };
 
+<<<<<<< HEAD
     public static string[] lineas7 = {
         "¿Por que no caes?, quizas tenga que hacerte un poco mas dificil las cosas...",
         "" };
@@ -46,4 +47,9 @@ public class Frases : MonoBehaviour {
         "" };
 
 
+=======
+    
+
+   
+>>>>>>> f9348683a4de031621bdfc09079c3aa23d6bf04b
 }

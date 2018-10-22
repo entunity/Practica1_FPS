@@ -10,12 +10,16 @@ public class Lanzallamas : MonoBehaviour {
     [SerializeField] ParticleSystem Fuego;
     [SerializeField] float PonerCargabaston;
     [SerializeField] GameObject hitboxLlamas;
+<<<<<<< HEAD
     [SerializeField] float multiplicadorCarga;
     [Header("Bola de fuego")]
     [SerializeField] GameObject ptoSalidaBola;
     [SerializeField] private Transform bolaFuego;
     [SerializeField] float velocidadBola;
     [SerializeField] float gastoBola;
+=======
+    [SerializeField] float multiplicadorCargar;
+>>>>>>> f9348683a4de031621bdfc09079c3aa23d6bf04b
     [Header("UI")]
     [SerializeField] Slider MunicionLlamas;
 
@@ -44,13 +48,21 @@ public class Lanzallamas : MonoBehaviour {
         }
         //aumentar carga
         if (disparandofuego == false && cargabaston <= cargamaxima) {
+<<<<<<< HEAD
             cargabaston += Time.deltaTime/multiplicadorCarga;
+=======
+            cargabaston += Time.deltaTime/multiplicadorCargar;
+>>>>>>> f9348683a4de031621bdfc09079c3aa23d6bf04b
             if (cargabaston >= cargamaxima) {
                 cargabaston = cargamaxima;
             }
         }
         // apagado baston
+<<<<<<< HEAD
         else if (cargabaston <= 0 || (Input.GetButtonUp(Configuracion.botonDisparo) && disparandofuego == true)) {
+=======
+        if (cargabaston <= 0 || (Input.GetButtonUp(Configuracion.botonDisparo) && disparandofuego == true)) {
+>>>>>>> f9348683a4de031621bdfc09079c3aa23d6bf04b
             Fuego.Stop();
             hitboxLlamas.SetActive(false);
             disparandofuego = false;
@@ -63,7 +75,11 @@ public class Lanzallamas : MonoBehaviour {
             this.GetComponent<AudioSource>().Stop();
         }*/
         //encendido baston
+<<<<<<< HEAD
         if ((Input.GetButton(Configuracion.botonDisparo) && disparandofuego == false)) {
+=======
+        else if ((Input.GetButton(Configuracion.botonDisparo) && disparandofuego == false)) {
+>>>>>>> f9348683a4de031621bdfc09079c3aa23d6bf04b
             Fuego.Play();
             hitboxLlamas.SetActive(true);
             disparandofuego = true;
@@ -78,7 +94,11 @@ public class Lanzallamas : MonoBehaviour {
         //disminuir carga
         else if (disparandofuego == true) {
             cargabaston -= Time.deltaTime;
+<<<<<<< HEAD
         }
+=======
+        } 
+>>>>>>> f9348683a4de031621bdfc09079c3aa23d6bf04b
         
     }
 }

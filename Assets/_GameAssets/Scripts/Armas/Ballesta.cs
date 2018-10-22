@@ -21,8 +21,13 @@ public class Ballesta : MonoBehaviour {
     private Ray rayo;
 
     private void Start() {
+<<<<<<< HEAD
         ptoMira = GameObject.Find(Configuracion.PlayerPtoMira);
         camara= GameObject.Find(Configuracion.playerCamara).GetComponent<Camera>();
+=======
+        ptoMira = GameObject.Find(Configuracion.tagPlayerPtoMira);
+        camara= GameObject.Find(Configuracion.tagPlayerMirar).GetComponent<Camera>();
+>>>>>>> f9348683a4de031621bdfc09079c3aa23d6bf04b
     }
     private void Update() {
         ControlBallesta();
@@ -48,7 +53,11 @@ public class Ballesta : MonoBehaviour {
             
         }
         //zoom ballesta
+<<<<<<< HEAD
         if (Input.GetButton(Configuracion.botonSecundario)) {
+=======
+        if (Input.GetButton(Configuracion.botonZoom)) {
+>>>>>>> f9348683a4de031621bdfc09079c3aa23d6bf04b
             camara.fieldOfView = Configuracion.FovZoom;
             ptoMira.transform.localRotation = Quaternion.Euler(1, 0.8f, 0);
         } else {

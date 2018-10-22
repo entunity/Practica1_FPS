@@ -276,12 +276,25 @@
     <Compile Include="Assets\_GameAssets\Scripts\Enemigos\EnemigoBoss.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\Enemigos\EnemigoEstatico.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\Enemigos\Orbitar.cs" />
+<<<<<<< HEAD
     <Compile Include="Assets\_GameAssets\Scripts\EscenarioJugable\MirarPlayer.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\EscenarioJugable\Recuperar.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\EscenarioJugable\Spawn.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\EscenarioJugable\Trampas.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\EscenarioJugable\VariarIluminacion.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\Frases.cs" />
+=======
+    <Compile Include="Assets\_GameAssets\Scripts\Escenario\MirarPlayer.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\Escenario\Recuperar.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\Escenario\Spawn.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\Escenario\Trampas.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\Escenario\VariarIluminacion.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\Frases.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\Intro\ActivarMovimientoIntro.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\Intro\CambiarScena.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\Intro\MoverBichosIntro.cs" />
+    <Compile Include="Assets\_GameAssets\Scripts\Intro\Transporte.cs" />
+>>>>>>> f9348683a4de031621bdfc09079c3aa23d6bf04b
     <Compile Include="Assets\_GameAssets\Scripts\Jugador.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\OtrasScenas\ActivarMovimientoIntro.cs" />
     <Compile Include="Assets\_GameAssets\Scripts\OtrasScenas\Borrar.cs" />

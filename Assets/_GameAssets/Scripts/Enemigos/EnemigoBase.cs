@@ -15,6 +15,8 @@ public class EnemigoBase : MonoBehaviour {
     private float TimerCambioDireccion;
     private Ray Rayo;
     private RaycastHit RayImpacto;
+    private float maxVida;
+    private Vector3 escalaActual;
     [Header("Impacto")]
     [SerializeField] private float danyo;
     [SerializeField] private float distanciaExplosion;
@@ -33,9 +35,15 @@ public class EnemigoBase : MonoBehaviour {
     // Use this for initialization
     void Start() {
         cambiarDireccion();
+<<<<<<< HEAD
         
         maxVida = vidaEnemigo;
         escalaActual = this.transform.lossyScale;
+=======
+        Rayo = new Ray(transform.position, Vector3.down);
+        maxVida = vidaEnemigo;
+        escalaActual = this.transform.localScale;
+>>>>>>> f9348683a4de031621bdfc09079c3aa23d6bf04b
     }
 
     // Update is called once per frame
@@ -67,6 +75,7 @@ public class EnemigoBase : MonoBehaviour {
 
             }
             float cambio= this.vidaEnemigo/maxVida;
+<<<<<<< HEAD
             if(this.gameObject.name.Contains("Boss"))
             this.transform.localScale = escalaActual * cambio;
             if (this.vidaEnemigo <= 0)
@@ -83,6 +92,9 @@ public class EnemigoBase : MonoBehaviour {
                 print(RayImpacto.point.y);
 
             }
+=======
+            this.transform.localScale = escalaActual * cambio;
+>>>>>>> f9348683a4de031621bdfc09079c3aa23d6bf04b
         }
     }
     //mira la distancia al player

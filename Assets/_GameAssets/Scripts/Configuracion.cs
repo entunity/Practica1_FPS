@@ -16,10 +16,18 @@ public class Configuracion : MonoBehaviour {
     public static string tagMunicion = "Ammo";
     public static string tagEnemigos = "Enemy";
     public static string tagPlayer = "Player";
+<<<<<<< HEAD
     public static string layerEnemigos = "Enemigos";
     //juego
     //entre un valor de 1 a 10 a partir de ese valor
     public static int[] lvl1 = new int[] { 7, 9, 10 };//7,9,10
+=======
+    public static string tagPlayerMirar = "FirstPersonCharacter";
+    public static string tagPlayerPtoMira = "PtoBaseMira";
+    //juego
+    //entre un valor de 1 a 10 a partir de ese valor
+    public static int[] lvl1 = new int[] { 7, 9, 10 };
+>>>>>>> f9348683a4de031621bdfc09079c3aa23d6bf04b
     public static int[] lvl2 = new int[] { 6, 9, 10 };
     public static int[] lvl3 = new int[] { 4, 8, 10 };
         //incremento de tiempo ej 10,20,30 de la duracion

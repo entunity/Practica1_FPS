@@ -35,6 +35,6 @@ public class Transporte : MonoBehaviour {
         Player.GetComponentInChildren<Ballesta>().enabled = true;
         Player.GetComponentInChildren<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
         //esperar y cambiar escena
-        CambiarScena.CambiarScene(Configuracion.LvlJugable);
+        CambiarScena.Cambio(Configuracion.LvlJugable);
     }
 }
